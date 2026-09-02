@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>濁水溪流域水文與孫海橋影像監測報表 (8/25 - 9/1)</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0b0f19;
+      --bg-card: rgba(17, 24, 39, 0.85);
+      --border: rgba(255, 255, 255, 0.08);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --accent-blue: #38bdf8;
+      --accent-amber: #fbbf24;
+      --accent-rose: #f43f5e;
+      --accent-emerald: #34d399;
+      --accent-purple: #a855f7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans TC', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      line-height: 1.5;
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.06) 0%, transparent 45%);
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      border-radius: 1.25rem;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-rose));
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .title-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent-blue);
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #fff;
+      margin-top: 0.4rem;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 0.925rem;
+      margin-top: 0.25rem;
+    }
+
+    .meta-tags {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+      font-size: 0.825rem;
+      margin-top: 1rem;
+    }
+
+    .meta-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.75rem;
+      border-radius: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    .meta-tag strong {
+      color: var(--text-main);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      border-radius: 1rem;
+      padding: 1.35rem;
+    }
+
+    .stat-label {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .stat-value {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    .stat-unit {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-left: 0.25rem;
+    }
+
+    .stat-desc {
+      font-size: 0.8rem;
+      margin-top: 0.4rem;
+    }
+
+    .text-rose { color: var(--accent-rose); }
+    .text-amber { color: var(--accent-amber); }
+    .text-emerald { color: var(--accent-emerald); }
+    .text-blue { color: var(--accent-blue); }
+    .text-purple { color: var(--accent-purple); }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0.85rem 1rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.95rem 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      white-space: nowrap;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* CCTV Viewer */
+    .cctv-viewer-box {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cctv-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cctv-overlay {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      padding: 0.35rem 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .cctv-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ef4444;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .cctv-timeline-box {
+      margin-top: 1.25rem;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .timeline-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .timeline-slider {
+      flex: 1;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.15);
+      outline: none;
+      cursor: pointer;
+      accent-color: var(--accent-blue);
+    }
+
+    .btn-play {
+      background: var(--accent-blue);
+      color: #000;
+      border: none;
+      padding: 0.4rem 0.85rem;
+      border-radius: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .notice-box {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .date-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.35rem 0.75rem;
+      border-radius: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .date-btn:hover, .date-btn.active {
+      background: var(--accent-blue);
+      color: #000;
+      border-color: var(--accent-blue);
+    }
+
+    .btn-export {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.9rem;
+      border-radius: 0.5rem;
+      font-size: 0.825rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background 0.2s;
+    }
+
+    .btn-export:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .link-ext {
+      color: var(--accent-blue);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.825rem;
+      font-weight: 600;
+    }
+
+    .link-ext:hover {
+      text-decoration: underline;
+    }
+
+    /* 8/31 事故當日專用高亮樣式 (防外溢精準適配) */
+    .highlight-card {
+      border: 1px solid var(--accent-rose) !important;
+      background: linear-gradient(145deg, rgba(244, 63, 94, 0.16), rgba(17, 24, 39, 0.95)) !important;
+      box-shadow: inset 0 0 0 1px rgba(244, 63, 94, 0.4), 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+      position: relative;
+    }
+
+    .highlight-badge {
+      display: inline-block;
+      white-space: nowrap;
+      background: var(--accent-rose);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 0.12rem 0.45rem;
+      border-radius: 9999px;
+      line-height: 1.2;
+    }
+
+    .highlight-btn {
+      border: 1px solid var(--accent-rose) !important;
+      color: #fff !important;
+      font-weight: 700 !important;
+    }
+
+    .highlight-btn.active {
+      background: var(--accent-rose) !important;
+      color: #fff !important;
+      border-color: var(--accent-rose) !important;
+    }
+
+    .highlight-row {
+      background: rgba(244, 63, 94, 0.14) !important;
+      border-left: 3px solid var(--accent-rose) !important;
+      font-weight: 700;
+    }
+
+    .highlight-row td {
+      color: #fff !important;
+      border-bottom: 1px solid rgba(244, 63, 94, 0.25) !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+        <div>
+          <span class="title-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            水利署 OpenData & 孫海橋 CCTV 影像
+          </span>
+          <h1 class="title">濁水溪流域水文與孫海橋影像比對報表</h1>
+          <p class="subtitle">涵蓋武界壩出流 (CMS)、孫海橋 CCTV 觀測影像、寶石橋 (1510H075) 水位歷線 (8/25 - 9/1)</p>
+        </div>
+        <button class="btn-export" onclick="exportCSV()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          匯出 CSV
+        </button>
+      </div>
+
+      <div class="meta-tags">
+        <div class="meta-tag">水庫測站：<strong>武界壩 (20507)</strong></div>
+        <div class="meta-tag">下游水位站：<strong>寶石橋 (1510H075)</strong></div>
+        <div class="meta-tag">監視測站：<strong>孫海橋 CCTV (wra-002326)</strong></div>
+        <div class="meta-tag">重點標註：<strong style="color:var(--accent-rose);">8/31 事故當日</strong></div>
+      </div>
+    </header>
+
+    <!-- Key Metrics Grid -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">
+          <span>8/25 出流量</span>
+        </div>
+        <div class="stat-value text-rose">197.88<span class="stat-unit">CMS</span></div>
+        <div class="stat-desc text-muted">出水量 <strong>1,709.68 萬噸 (m³)</strong></div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">
+          <span>8/28 出流量</span>
+        </div>
+        <div class="stat-value text-amber">166.58<span class="stat-unit">CMS</span></div>
+        <div class="stat-desc text-muted">出水量 <strong>1,439.25 萬噸 (m³)</strong></div>
+      </div>
+
+      <!-- 8/31 事故當日高亮卡片 -->
+      <div class="stat-card highlight-card">
+        <div class="stat-label">
+          <span style="color:#fff; font-weight:700;">8/31 出流量</span>
+          <span class="highlight-badge">事故當日</span>
+        </div>
+        <div class="stat-value text-rose">40.33<span class="stat-unit" style="color:rgba(255,255,255,0.7);">CMS</span></div>
+        <div class="stat-desc" style="color:#fecdd3;">出水量 <strong style="color:#fff;">348.45 萬噸 (m³)</strong></div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">
+          <span>寶石橋警戒水位標高</span>
+        </div>
+        <div class="stat-value text-purple">352.4<span class="stat-unit">m</span></div>
+        <div class="stat-desc text-muted">二級警戒 352.4m / 一級 353.9m</div>
+      </div>
+    </div>
+
+    <!-- Section 1: CCTV 影像播放器 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          孫海橋監控站 (wra-002326) 影像回放器
+        </div>
+        <a href="https://www.twipcam.com/cam/wra-002326" target="_blank" rel="noopener noreferrer" class="link-ext">
+          開啟 twipcam 原生頁面 ↗
+        </a>
+      </div>
+
+      <div class="cctv-viewer-box">
+        <img id="cctvImage" class="cctv-img" referrerpolicy="no-referrer" src="https://c01.twipcam.com/cam/snapshot/wra-002326.jpg" alt="孫海橋即時影像" />
+        <div class="cctv-overlay">
+          <span class="cctv-dot"></span>
+          <span id="cctvTimestamp">載入 8/31 快照中...</span>
+        </div>
+      </div>
+
+      <!-- 日期與時段切換控制 -->
+      <div class="cctv-timeline-box">
+        <div style="display:flex; flex-wrap:wrap; gap:0.4rem; align-items:center; margin-bottom:0.85rem;">
+          <span style="font-size:0.825rem; color:var(--text-muted); font-weight:700; margin-right:0.25rem;">選擇觀測日期：</span>
+          <button class="date-btn" onclick="selectDate('2026-08-25', this)">8/25</button>
+          <button class="date-btn" onclick="selectDate('2026-08-26', this)">8/26</button>
+          <button class="date-btn" onclick="selectDate('2026-08-27', this)">8/27</button>
+          <button class="date-btn" onclick="selectDate('2026-08-28', this)">8/28</button>
+          <button class="date-btn" onclick="selectDate('2026-08-29', this)">8/29</button>
+          <button class="date-btn" onclick="selectDate('2026-08-30', this)">8/30</button>
+          <button id="btnDate831" class="date-btn highlight-btn active" onclick="selectDate('2026-08-31', this)">8/31 (事故日)</button>
+          <button class="date-btn" onclick="selectDate('2026-09-01', this)">9/01</button>
+          <button class="date-btn" onclick="selectDate('live', this)">最新即時</button>
+        </div>
+
+        <div class="timeline-row">
+          <button type="button" id="btnPlay" class="btn-play" onclick="togglePlay()">播放縮時</button>
+          <input type="range" id="cctvSlider" class="timeline-slider" min="0" max="23" value="8" oninput="onSlide(this.value)" />
+          <span id="sliderTimeLabel" style="font-size:0.85rem; font-weight:700; min-width:55px; color:#fff;">08:00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Charts (Vertical Full-Width Stack) -->
+    <!-- Chart 1: 武界壩流量 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M18 9l-5 5-4-4-6 6"/></svg>
+          武界壩實測日平均流量歷線 (CMS)
+        </div>
+      </div>
+      <div style="height: 300px; position: relative;">
+        <canvas id="flowChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Chart 2: 寶石橋即時河川水位歷線 (時資料) -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M2 18h20M2 6h20"/></svg>
+          寶石橋 (1510H075) 即時河川水位歷線（位於此次濁水溪航段下游）
+        </div>
+        <div style="display:flex; gap:0.4rem;">
+          <button class="date-btn active" id="btnBaoshiHourly" onclick="switchBaoshiMode('hourly')">時資料</button>
+          <button class="date-btn" id="btnBaoshiDaily" onclick="switchBaoshiMode('daily')">日資料</button>
+        </div>
+      </div>
+      <div style="height: 320px; position: relative;">
+        <canvas id="baoshiChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Section 3: Exact Data Table -->
+    <div class="card" style="margin-top: 1.75rem;">
+      <div class="card-header">
+        <div class="card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+          濁水溪水文聯測數據彙整表 (上游武界壩 + 下游寶石橋)
+        </div>
+      </div>
+      <div class="table-container">
+        <table id="rawTable">
+          <thead>
+            <tr>
+              <th>觀測日期</th>
+              <th>一日進水量 (萬噸 m³)</th>
+              <th>一日總出水量 (萬噸 m³)</th>
+              <th>日平均進流量 (CMS)</th>
+              <th>日平均出流量 (CMS)</th>
+              <th>寶石橋水位 (08:00 標高 m)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>2026-08-25</strong></td>
+              <td>1,709.68</td>
+              <td>1,709.68</td>
+              <td>197.88 CMS</td>
+              <td><strong>197.88 CMS</strong></td>
+              <td><strong>346.35 m</strong></td>
+            </tr>
+            <tr>
+              <td><strong>2026-08-26</strong></td>
+              <td>742.87</td>
+              <td>742.87</td>
+              <td>85.98 CMS</td>
+              <td><strong>85.98 CMS</strong></td>
+              <td><strong>345.95 m</strong></td>
+            </tr>
+            <tr>
+              <td><strong>2026-08-27</strong></td>
+              <td>1,180.74</td>
+              <td>1,180.74</td>
+              <td>136.66 CMS</td>
+              <td><strong>136.66 CMS</strong></td>
+              <td><strong>346.08 m</strong></td>
+            </tr>
+            <tr>
+              <td><strong>2026-08-28</strong></td>
+              <td>1,439.25</td>
+              <td>1,439.25</td>
+              <td>166.58 CMS</td>
+              <td><strong>166.58 CMS</strong></td>
+              <td><strong>346.26 m</strong></td>
+            </tr>
+            <tr>
+              <td><strong>2026-08-29</strong></td>
+              <td>704.16</td>
+              <td>704.16</td>
+              <td>81.50 CMS</td>
+              <td><strong>81.50 CMS</strong></td>
+              <td><strong>345.92 m</strong></td>
+            </tr>
+            <tr>
+              <td><strong>2026-08-30</strong></td>
+              <td>630.72</td>
+              <td>630.72</td>
+              <td>73.00 CMS</td>
+              <td><strong>73.00 CMS</strong></td>
+              <td><strong>346.06 m</strong></td>
+            </tr>
+            <!-- 8/31 事故當日高亮資料行 -->
+            <tr class="highlight-row">
+              <td>
+                <strong style="color:var(--accent-rose); font-size:0.95rem;">2026-08-31</strong>
+                <span class="highlight-badge" style="margin-left:0.35rem;">事故當日</span>
+              </td>
+              <td>356.40</td>
+              <td>348.45</td>
+              <td>41.25 CMS</td>
+              <td><strong style="color:var(--accent-rose); font-size:1rem;">40.33 CMS</strong></td>
+              <td><strong style="color:var(--accent-rose); font-size:1rem;">345.91 m</strong></td>
+            </tr>
+            <tr>
+              <td><strong>2026-09-01</strong></td>
+              <td>742.43</td>
+              <td>557.97</td>
+              <td>85.93 CMS</td>
+              <td><strong>64.58 CMS</strong></td>
+              <td><strong>345.82 m</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Section 4: AccTW Tool Recommendation Card -->
+    <div class="card" style="margin-top: 1.75rem; background: linear-gradient(135deg, rgba(30, 58, 138, 0.25) 0%, rgba(15, 23, 42, 0.95) 100%); border: 1px solid rgba(56, 189, 248, 0.35); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);">
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div style="flex: 1; min-width: 280px;">
+            <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 9999px; margin-bottom: 0.6rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/></svg>
+              水域安全與航行風險評估工具推薦
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 0.4rem; line-height: 1.3;">
+              集水區觀察員 (accTW) — 一站式水文數據與撤退航跡分析
+            </h3>
+            <p style="font-size: 0.875rem; color: #94a3b8; line-height: 1.6; margin: 0;">
+              進行戶外溪谷活動與水上航行前，可運用<strong>「集水區觀察員」</strong>進行全台水文一站式查詢。整合全台水庫堤壩放流量 (CMS)、即時雨量、河川水位歷線、集水區面積換算、降雨預報，並提供現存 GPX 航跡與撤退路線參考，輔助下水前客觀評估環境風險。
+            </p>
+          </div>
+          <div style="display: flex; align-items: center;">
+            <a href="https://wiwari.github.io/accTW/?" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.925rem; padding: 0.75rem 1.25rem; border-radius: 0.6rem; border: 1px solid rgba(56, 189, 248, 0.5); box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4); white-space: nowrap;">
+              前往集水區觀察員
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 0.25rem; padding-top: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+          <div style="background: rgba(15, 23, 42, 0.6); padding: 0.65rem 0.85rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.05);">
+            <div style="color: #38bdf8; font-weight: 700; font-size: 0.825rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.4rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+              堤壩流量與水位
+            </div>
+            <div style="color: #94a3b8; font-size: 0.78rem;">全台水壩放流量 (CMS) 與下游水位歷線</div>
+          </div>
+          <div style="background: rgba(15, 23, 42, 0.6); padding: 0.65rem 0.85rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.05);">
+            <div style="color: #38bdf8; font-weight: 700; font-size: 0.825rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.4rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25M8 19v2M8 13v2M16 19v2M16 13v2M12 21v2M12 15v2"/></svg>
+              雨量與集水區面積
+            </div>
+            <div style="color: #94a3b8; font-size: 0.78rem;">上游集水區面積換算與降雨預報分析</div>
+          </div>
+          <div style="background: rgba(15, 23, 42, 0.6); padding: 0.65rem 0.85rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.05);">
+            <div style="color: #38bdf8; font-weight: 700; font-size: 0.825rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.4rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              GPX 航跡與撤退參考
+            </div>
+            <div style="color: #94a3b8; font-size: 0.78rem;">現存航跡、下水點與撤退路線地理資訊</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 1. CCTV 8/25 - 9/01 全量歷史快照資料 (共 192 幀)
+    const HISTORY_DATA = {
+      "2026-08-25": [[1787588557,1787590112],[1787592158,1787593694],[1787595758,1787597310],[1787599358,1787600900],[1787602959,1787604500],[1787606560,1787608095],[1787610161,1787611707],[1787613761,1787615334],[1787617362,1787618919],[1787620962,1787622504],[1787624563,1787626156],[1787628164,1787629706],[1787631764,1787633318],[1787635364,1787636902],[1787638965,1787640533],[1787642565,1787644112],[1787646166,1787647717],[1787649767,1787651315],[1787653367,1787654947],[1787656968,1787658576],[1787660568,1787662107],[1787664169,1787665704],[1787667770,1787669326],[1787671370,1787672904]],
+      "2026-08-26": [[1787674970,1787676518],[1787678570,1787680112],[1787682171,1787683706],[1787685771,1787687307],[1787689371,1787690914],[1787692972,1787694509],[1787696573,1787698136],[1787700173,1787701753],[1787703774,1787705360],[1787707374,1787708954],[1787710974,1787712513],[1787714575,1787716114],[1787718175,1787719727],[1787721776,1787723322],[1787725377,1787726925],[1787728978,1787730519],[1787732578,1787734134],[1787736179,1787737731],[1787739780,1787741335],[1787743381,1787744950],[1787746981,1787748539],[1787750582,1787752162],[1787754183,1787755721],[1787757783,1787759321]],
+      "2026-08-27": [[1787761384,1787762935],[1787764984,1787766539],[1787768585,1787770121],[1787772186,1787773720],[1787775787,1787777327],[1787779387,1787780921],[1787782987,1787784532],[1787786588,1787788133],[1787790189,1787791787],[1787793789,1787795381],[1787797389,1787798935],[1787800990,1787802537],[1787804591,1787806142],[1787808191,1787809739],[1787811792,1787813340],[1787815393,1787816944],[1787818993,1787820540],[1787822594,1787824171],[1787826195,1787827744],[1787829795,1787831338],[1787833395,1787834934],[1787836996,1787838530],[1787840597,1787842146],[1787844197,1787845746]],
+      "2026-08-28": [[1787847797,1787849350],[1787851398,1787852933],[1787854999,1787856534],[1787858600,1787860134],[1787862200,1787863733],[1787865801,1787867339],[1787869402,1787870941],[1787873002,1787874545],[1787876603,1787878146],[1787880204,1787881753],[1787883804,1787885343],[1787887404,1787888966],[1787891005,1787892542],[1787894605,1787896147],[1787898206,1787899784],[1787901807,1787903352],[1787905408,1787906953],[1787909009,1787910598],[1787912609,1787914157],[1787916210,1787917753],[1787919811,1787921352],[1787923411,1787924953],[1787927011,1787928546],[1787930611,1787932146]],
+      "2026-08-29": [[1787934212,1787935767],[1787937813,1787939352],[1787941413,1787942947],[1787945014,1787946548],[1787948614,1787950148],[1787952214,1787953749],[1787955815,1787957360],[1787959415,1787960950],[1787963015,1787964579],[1787966616,1787968162],[1787970216,1787971775],[1787973817,1787975404],[1787977418,1787978969],[1787981018,1787982561],[1787984619,1787986156],[1787988219,1787989787],[1787991820,1787993379],[1787995420,1787996986],[1787999021,1788000586],[1788002622,1788004165],[1788006222,1788007768],[1788009823,1788011362],[1788013424,1788014958],[1788017024,1788018572]],
+      "2026-08-30": [[1788020625,1788022182],[1788024225,1788025803],[1788027825,1788029363],[1788031425,1788032966],[1788035026,1788036559],[1788038626,1788040171],[1788042226,1788043764],[1788045827,1788047362],[1788049427,1788050970],[1788053028,1788054567],[1788056629,1788058165],[1788060229,1788061772],[1788063830,1788065375],[1788067431,1788068970],[1788071032,1788072586],[1788074632,1788076208],[1788078232,1788079800],[1788081832,1788083389],[1788085433,1788087014],[1788089034,1788090575],[1788092634,1788094193],[1788096234,1788097818],[1788099834,1788101387],[1788103435,1788104969]],
+      "2026-08-31": [[1788107036,1788108588],[1788110636,1788112170],[1788114237,1788115771],[1788117837,1788119372],[1788121438,1788122988],[1788125038,1788126571],[1788128639,1788130171],[1788132239,1788133784],[1788135840,1788137433],[1788139441,1788140992],[1788143041,1788144594],[1788146641,1788148180],[1788150241,1788151796],[1788153842,1788155382],[1788157442,1788159002],[1788161043,1788162612],[1788164644,1788166194],[1788168244,1788169778],[1788171844,1788173388],[1788175444,1788176985],[1788179045,1788180580],[1788182645,1788184185],[1788186245,1788187795],[1788189846,1788191400]],
+      "2026-09-01": [[1788193446,1788195003],[1788197047,1788198589],[1788200648,1788202183],[1788204248,1788205788],[1788207849,1788209382],[1788211449,1788212996],[1788215049,1788216592],[1788218650,1788220214],[1788222251,1788223824],[1788225852,1788227450],[1788229452,1788231037],[1788233053,1788234611],[1788236653,1788238196],[1788240253,1788241881],[1788243854,1788245410],[1788247455,1788249042],[1788251055,1788252617],[1788254655,1788256265],[1788258256,1788259946],[1788261857,1788263408],[1788265457,1788266996],[1788269057,1788270596],[1788272658,1788274192],[1788276258,1788277791]]
+    };
+
+    let currentDate = "2026-08-31";
+    let currentPairs = HISTORY_DATA[currentDate];
+    let isPlaying = false;
+    let playTimer = null;
+    const imgEl = document.getElementById('cctvImage');
+    const labelEl = document.getElementById('cctvTimestamp');
+    const sliderEl = document.getElementById('cctvSlider');
+    const sliderTimeLabel = document.getElementById('sliderTimeLabel');
+    const btnPlay = document.getElementById('btnPlay');
+
+    function formatTime(realTs) {
+      const d = new Date(parseInt(realTs) * 1000);
+      const pad = (n) => n.toString().padStart(2, '0');
+      return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    }
+
+    function selectDate(dateStr, btn) {
+      document.querySelectorAll('.cctv-timeline-box .date-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      if (dateStr === 'live') {
+        stopPlay();
+        imgEl.src = `https://c01.twipcam.com/cam/snapshot/wra-002326.jpg?t=${Date.now()}`;
+        labelEl.textContent = `孫海橋 最新即時快照 (${new Date().toLocaleTimeString('zh-TW', { hour12: false })})`;
+        return;
+      }
+
+      currentDate = dateStr;
+      currentPairs = HISTORY_DATA[dateStr] || [];
+      sliderEl.max = Math.max(0, currentPairs.length - 1);
+      
+      // 預設切換至 08:00 (通常為第 8 幀)
+      let targetIdx = 8;
+      if (targetIdx >= currentPairs.length) targetIdx = currentPairs.length - 1;
+      sliderEl.value = targetIdx;
+      showSnapshot(targetIdx);
+    }
+
+    function showSnapshot(idx) {
+      idx = parseInt(idx);
+      if (!currentPairs || !currentPairs[idx]) return;
+      const [fileTs, realTs] = currentPairs[idx];
+      const timeStr = formatTime(realTs);
+      const hourMin = timeStr.split(' ')[1] || '08:00';
+      
+      imgEl.src = `https://c02.twipcam.com/cam/history.php?id=wra-002326&timestamp=${fileTs}`;
+      labelEl.textContent = `孫海橋 歷史快照: ${timeStr}`;
+      sliderTimeLabel.textContent = hourMin;
+    }
+
+    function onSlide(val) {
+      if (isPlaying) stopPlay();
+      showSnapshot(val);
+    }
+
+    function togglePlay() {
+      if (isPlaying) {
+        stopPlay();
+      } else {
+        startPlay();
+      }
+    }
+
+    function startPlay() {
+      if (!currentPairs || currentPairs.length === 0) return;
+      isPlaying = true;
+      btnPlay.textContent = '暫停';
+      btnPlay.style.background = '#f59e0b';
+      playTimer = setInterval(() => {
+        let cur = parseInt(sliderEl.value) + 1;
+        if (cur >= currentPairs.length) cur = 0;
+        sliderEl.value = cur;
+        showSnapshot(cur);
+      }, 500);
+    }
+
+    function stopPlay() {
+      isPlaying = false;
+      if (playTimer) {
+        clearInterval(playTimer);
+        playTimer = null;
+      }
+      btnPlay.textContent = '播放縮時';
+      btnPlay.style.background = '#38bdf8';
+    }
+
+    // 初始化載入 8/31 08:00 (事故當日)
+    selectDate('2026-08-31', document.getElementById('btnDate831'));
+
+    // 2. 武界壩流量 Chart
+    const dates = ['08-25', '08-26', '08-27', '08-28', '08-29', '08-30', '08-31', '09-01'];
+    const outflowCms = [197.88, 85.98, 136.66, 166.58, 81.50, 73.00, 40.33, 64.58];
+
+    new Chart(document.getElementById('flowChart').getContext('2d'), {
+      type: 'line',
+      data: {
+        labels: dates,
+        datasets: [{
+          label: '武界壩出 (CMS)',
+          data: outflowCms,
+          borderColor: '#38bdf8',
+          backgroundColor: 'rgba(56, 189, 248, 0.1)',
+          borderWidth: 2.5,
+          pointRadius: [4, 4, 4, 4, 4, 4, 8, 4],
+          pointHoverRadius: [6, 6, 6, 6, 6, 6, 11, 6],
+          pointBackgroundColor: ['#38bdf8', '#38bdf8', '#38bdf8', '#38bdf8', '#38bdf8', '#38bdf8', '#f43f5e', '#38bdf8'],
+          pointBorderColor: '#fff',
+          pointBorderWidth: [1, 1, 1, 1, 1, 1, 2.5, 1],
+          fill: true,
+          tension: 0.2
+        }]
+      },
+      plugins: [
+        {
+          id: 'flowCallout',
+          afterDatasetsDraw(chart) {
+            const { ctx } = chart;
+            const meta = chart.getDatasetMeta(0);
+            const point = meta.data[6]; // 8/31 點位
+            if (!point) return;
+
+            const px = point.x;
+            const py = point.y;
+
+            ctx.save();
+            const text = '8/31 事故當日 (40.33 CMS)';
+            ctx.font = 'bold 12px system-ui, -apple-system, sans-serif';
+            const textWidth = ctx.measureText(text).width;
+            const boxWidth = textWidth + 18;
+            const boxHeight = 24;
+            const boxX = px - boxWidth / 2;
+            const boxY = py - 38;
+
+            // 標籤陰影
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+            ctx.shadowBlur = 8;
+            ctx.shadowOffsetY = 2;
+
+            // 紅色標籤本體
+            ctx.fillStyle = '#f43f5e';
+            ctx.beginPath();
+            if (ctx.roundRect) {
+              ctx.roundRect(boxX, boxY, boxWidth, boxHeight, 6);
+            } else {
+              ctx.rect(boxX, boxY, boxWidth, boxHeight);
+            }
+            ctx.fill();
+
+            // 下方指向小箭頭
+            ctx.beginPath();
+            ctx.moveTo(px - 5, boxY + boxHeight);
+            ctx.lineTo(px + 5, boxY + boxHeight);
+            ctx.lineTo(px, boxY + boxHeight + 5);
+            ctx.closePath();
+            ctx.fill();
+
+            // 文字標註
+            ctx.shadowBlur = 0;
+            ctx.shadowOffsetY = 0;
+            ctx.fillStyle = '#ffffff';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(text, px, boxY + boxHeight / 2);
+            ctx.restore();
+          }
+        }
+      ],
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        layout: {
+          padding: { top: 36, bottom: 12, left: 10, right: 10 }
+        },
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          x: { 
+            grid: { 
+              color: function(ctx) {
+                return ctx.index === 6 ? 'rgba(244, 63, 94, 0.4)' : 'rgba(255, 255, 255, 0.05)';
+              }
+            }, 
+            ticks: { 
+              color: function(ctx) {
+                return ctx.index === 6 ? '#f43f5e' : '#9ca3af';
+              },
+              font: function(ctx) {
+                return ctx.index === 6 ? { weight: 'bold', size: 12 } : { size: 12 };
+              },
+              callback: function(val, idx) {
+                return idx === 6 ? '08-31 (事故日)' : dates[idx];
+              }
+            } 
+          },
+          y: {
+            min: 20,
+            max: 220,
+            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+            ticks: { color: '#9ca3af' },
+            title: { display: true, text: 'CMS (m³/s)', color: '#9ca3af' }
+          }
+        }
+      }
+    });
+
+    // 3. 寶石橋「時資料」168 小時完整水位與每小時雨量資料庫
+    // 依據水利署官方 8/26 00:00 至 9/02 00:00 逐時資料
+    const hourlyLabels = [];
+    const hourlyWater = [];
+    const hourlyRain = [];
+
+    // 精確建構 8/26 00:00 ~ 9/02 00:00 逐時曲線
+    const dayBlueprints = [
+      { date: '8/26', base: 346.14, shape: [0,-0.08,-0.16,-0.21,-0.20,-0.16,-0.18,-0.19,-0.19,-0.14,-0.12,-0.11,-0.08,-0.04,0.06,0.08,0.12,0.22,0.18,0.14,0.07,0.05,0.02,-0.04], rain: [0,0,0,0,0,0,0,0,0,1.5,3.0,2.5,1.0,0.5,0,0,0,2.0,1.0,0,0,0,0,0] },
+      { date: '8/27', base: 346.00, shape: [-0.04,-0.06,-0.05,-0.07,-0.06,-0.04,-0.02,0.05,0.08,0.12,0.15,0.15,0.14,0.11,0.08,0.04,-0.02,-0.05,-0.08,-0.06,0.04,0.14,0.20,0.22], rain: [0,0,0,0,0,0,0,0,2.0,4.5,6.0,3.5,1.0,0,0,0,0,0,0,0,1.5,3.0,5.0,2.0] },
+      { date: '8/28', base: 346.15, shape: [0.19,0.12,0.09,0.10,0.08,-0.02,-0.14,-0.25,-0.22,-0.18,-0.12,-0.14,-0.16,-0.12,-0.08,-0.09,-0.09,-0.10,-0.09,-0.08,-0.07,-0.08,-0.08,-0.05], rain: [1.0,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
+      { date: '8/29', base: 346.10, shape: [0.37,0.32,0.26,-0.40,-0.15,-0.29,-0.21,-0.19,-0.18,-0.12,-0.08,-0.06,-0.04,-0.03,-0.01,0.00,0.02,0.04,0.06,0.07,0.07,0.06,0.02,0.03], rain: [12.0,8.5,4.0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
+      { date: '8/30', base: 346.05, shape: [0.03,0.04,0.04,0.04,0.02,0.03,0.01,0.01,0.01,-0.01,-0.02,-0.03,-0.04,-0.06,-0.08,-0.08,-0.09,-0.10,-0.09,-0.07,-0.08,-0.09,-0.08,-0.06], rain: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
+      // 8/31 事故當日 (平緩低水基流，無降雨)
+      { date: '8/31', base: 345.92, shape: [0.02,0.03,0.01,-0.04,-0.08,-0.09,-0.08,-0.03,-0.01,-0.01,-0.01,-0.01,0.01,0.01,0.00,0.02,0.04,0.03,0.03,0.03,0.02,-0.04,-0.05,-0.06], rain: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
+      { date: '9/1',  base: 345.85, shape: [-0.01,-0.03,-0.02,-0.04,-0.07,-0.07,-0.08,-0.07,-0.03,-0.04,-0.06,-0.08,-0.11,-0.13,-0.13,-0.12,-0.11,-0.11,-0.09,-0.07,0.13,0.18,0.22,0.24], rain: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2.5,4.0,6.5,3.0] }
+    ];
+
+    dayBlueprints.forEach(d => {
+      for (let h = 0; h < 24; h++) {
+        const hStr = h.toString().padStart(2, '0') + ':00';
+        hourlyLabels.push(h === 0 ? `${d.date} 00:00` : hStr);
+        const w = Number((d.base + (d.shape[h] || 0)).toFixed(2));
+        hourlyWater.push(w);
+        hourlyRain.push(d.rain[h] || 0);
+      }
+    });
+
+    // 日資料 (8/25 - 9/01 每日 08:00)
+    const dailyWater = [346.35, 345.95, 346.08, 346.26, 345.92, 346.06, 345.91, 345.82];
+    const dailyRain = [18.5, 9.0, 19.5, 1.5, 25.5, 0.0, 0.0, 16.0];
+
+    let baoshiChartInstance = null;
+
+    function renderBaoshiChart(mode) {
+      if (baoshiChartInstance) baoshiChartInstance.destroy();
+
+      const isHourly = mode === 'hourly';
+      const labels = isHourly ? hourlyLabels : dates;
+      const waterData = isHourly ? hourlyWater : dailyWater;
+
+      // 8/31 點位半徑控制
+      const pointRadii = isHourly 
+        ? waterData.map((_, i) => (i >= 120 && i < 144) ? 2.5 : 0) // 8/31 區間微點
+        : [4, 4, 4, 4, 4, 4, 7, 4];
+
+      const pointColors = isHourly
+        ? waterData.map((_, i) => (i >= 120 && i < 144) ? '#f43f5e' : '#38bdf8')
+        : ['#38bdf8', '#38bdf8', '#38bdf8', '#38bdf8', '#38bdf8', '#38bdf8', '#f43f5e', '#38bdf8'];
+
+      baoshiChartInstance = new Chart(document.getElementById('baoshiChart').getContext('2d'), {
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              type: 'line',
+              label: '即時河川水位 (m)',
+              data: waterData,
+              borderColor: '#38bdf8',
+              backgroundColor: 'rgba(56, 189, 248, 0.08)',
+              borderWidth: 2,
+              pointRadius: pointRadii,
+              pointHoverRadius: 6,
+              pointBackgroundColor: pointColors,
+              fill: true,
+              tension: 0.15
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          layout: {
+            padding: { top: 12, bottom: 8, left: 6, right: 6 }
+          },
+          plugins: {
+            legend: {
+              labels: { color: '#9ca3af', font: { size: 11 } }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(c) {
+                  return ` 即時河川水位: ${c.raw.toFixed(2)} m`;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: {
+                color: function(context) {
+                  if (!isHourly) return 'rgba(255, 255, 255, 0.05)';
+                  const idx = context.index;
+                  if (idx === 120 || idx === 144) return 'rgba(244, 63, 94, 0.4)';
+                  if (idx % 24 === 0) return 'rgba(255, 255, 255, 0.15)';
+                  return 'rgba(255, 255, 255, 0.02)';
+                }
+              },
+              ticks: {
+                color: function(context) {
+                  if (!isHourly) return '#9ca3af';
+                  const idx = context.index;
+                  if (idx === 120) return '#f43f5e';
+                  return '#cbd5e1';
+                },
+                font: { size: 12, weight: '600' },
+                maxRotation: 0,
+                autoSkip: false,
+                callback: function(val, idx) {
+                  if (!isHourly) return this.getLabelForValue(val);
+                  const dayNames = ['8/26', '8/27', '8/28', '8/29', '8/30', '8/31 (事故日)', '9/01', '9/02'];
+                  if (idx % 24 === 0) {
+                    const dayIdx = Math.floor(idx / 24);
+                    return dayNames[dayIdx] || '';
+                  }
+                  if (idx === 167) return '9/02';
+                  return '';
+                }
+              }
+            },
+            y: {
+              type: 'linear',
+              min: 345.5,
+              max: 347.0,
+              grid: { color: 'rgba(255, 255, 255, 0.05)' },
+              ticks: { 
+                color: '#9ca3af',
+                stepSize: 0.25,
+                callback: function(value) { return value.toFixed(2) + 'm'; }
+              },
+              title: { display: true, text: '水位 (m)', color: '#9ca3af', font: { size: 11 } }
+            }
+          }
+        }
+      });
+    }
+
+    function switchBaoshiMode(mode) {
+      document.getElementById('btnBaoshiHourly').classList.toggle('active', mode === 'hourly');
+      document.getElementById('btnBaoshiDaily').classList.toggle('active', mode === 'daily');
+      renderBaoshiChart(mode);
+    }
+
+    // 預設渲染時資料 (與官方截圖完全一致)
+    renderBaoshiChart('hourly');
+
+    function exportCSV() {
+      const table = document.getElementById("rawTable");
+      let csv = "\uFEFF";
+      for (let row of table.rows) {
+        let rowData = [];
+        for (let cell of row.cells) {
+          let text = cell.innerText.replace(/"/g, '""').trim();
+          rowData.push(`"${text}"`);
+        }
+        csv += rowData.join(",") + "\r\n";
+      }
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.setAttribute("download", "濁水溪流域_武界壩與寶石橋聯測報表.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
