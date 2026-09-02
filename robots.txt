@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wiwari.github.io/zhuoshui-report/sitemap.xml
+Sitemap: https://witinwatersrafting-arch.github.io/wujie-report/sitemap.xml
