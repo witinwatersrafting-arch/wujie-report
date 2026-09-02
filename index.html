@@ -949,7 +949,7 @@
         {
           id: 'flowCallout',
           afterDatasetsDraw(chart) {
-            const { ctx } = chart;
+            const { ctx, width } = chart;
             const meta = chart.getDatasetMeta(0);
             const point = meta.data[6]; // 8/31 點位
             if (!point) return;
@@ -959,23 +959,27 @@
 
             ctx.save();
             const text = '8/31 事故當日 (40.33 CMS)';
-            ctx.font = 'bold 12px system-ui, -apple-system, sans-serif';
+            ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
             const textWidth = ctx.measureText(text).width;
-            const boxWidth = textWidth + 18;
-            const boxHeight = 24;
-            const boxX = px - boxWidth / 2;
-            const boxY = py - 38;
+            const boxWidth = textWidth + 14;
+            const boxHeight = 22;
+            
+            // 防溢出自適應座標 (確保完全留在畫布內)
+            let boxX = px - boxWidth / 2;
+            if (boxX + boxWidth > width - 6) boxX = width - boxWidth - 6;
+            if (boxX < 6) boxX = 6;
+            const boxY = Math.max(8, py - 34);
 
             // 標籤陰影
             ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
-            ctx.shadowBlur = 8;
+            ctx.shadowBlur = 6;
             ctx.shadowOffsetY = 2;
 
             // 紅色標籤本體
             ctx.fillStyle = '#f43f5e';
             ctx.beginPath();
             if (ctx.roundRect) {
-              ctx.roundRect(boxX, boxY, boxWidth, boxHeight, 6);
+              ctx.roundRect(boxX, boxY, boxWidth, boxHeight, 5);
             } else {
               ctx.rect(boxX, boxY, boxWidth, boxHeight);
             }
@@ -983,9 +987,9 @@
 
             // 下方指向小箭頭
             ctx.beginPath();
-            ctx.moveTo(px - 5, boxY + boxHeight);
-            ctx.lineTo(px + 5, boxY + boxHeight);
-            ctx.lineTo(px, boxY + boxHeight + 5);
+            ctx.moveTo(px - 4, boxY + boxHeight);
+            ctx.lineTo(px + 4, boxY + boxHeight);
+            ctx.lineTo(px, Math.min(py - 2, boxY + boxHeight + 4));
             ctx.closePath();
             ctx.fill();
 
@@ -995,7 +999,7 @@
             ctx.fillStyle = '#ffffff';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.fillText(text, px, boxY + boxHeight / 2);
+            ctx.fillText(text, boxX + boxWidth / 2, boxY + boxHeight / 2);
             ctx.restore();
           }
         }
@@ -1004,7 +1008,7 @@
         responsive: true,
         maintainAspectRatio: false,
         layout: {
-          padding: { top: 36, bottom: 12, left: 10, right: 10 }
+          padding: { top: 46, bottom: 10, left: 6, right: 10 }
         },
         plugins: {
           legend: { display: false }
@@ -1021,10 +1025,10 @@
                 return ctx.index === 6 ? '#f43f5e' : '#9ca3af';
               },
               font: function(ctx) {
-                return ctx.index === 6 ? { weight: 'bold', size: 12 } : { size: 12 };
+                return ctx.index === 6 ? { weight: 'bold', size: 11 } : { size: 11 };
               },
               callback: function(val, idx) {
-                return idx === 6 ? '08-31 (事故日)' : dates[idx];
+                return dates[idx];
               }
             } 
           },
@@ -1108,12 +1112,75 @@
             }
           ]
         },
+        plugins: [
+          {
+            id: 'baoshiTopCallout',
+            afterDatasetsDraw(chart) {
+              const { ctx, width, scales: { x } } = chart;
+              const meta = chart.getDatasetMeta(0);
+              
+              // 找出 8/31 錨點位置 (時資料取 index 128 (08:00)，日資料取 index 6)
+              const targetIdx = isHourly ? 128 : 6;
+              const point = meta.data[targetIdx];
+              if (!point) return;
+
+              const px = point.x;
+              const py = point.y;
+
+              ctx.save();
+              const text = '8/31 事故日 (345.91m)';
+              ctx.font = 'bold 11px system-ui, -apple-system, sans-serif';
+              const textWidth = ctx.measureText(text).width;
+              const boxWidth = textWidth + 14;
+              const boxHeight = 20;
+
+              // 標籤放置於圖表上方，完全不遮擋 X 軸
+              let boxX = px - boxWidth / 2;
+              if (boxX + boxWidth > width - 6) boxX = width - boxWidth - 6;
+              if (boxX < 6) boxX = 6;
+              const boxY = 8; // 固定在頂部安全區
+
+              // 標籤陰影
+              ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+              ctx.shadowBlur = 4;
+              ctx.shadowOffsetY = 1;
+
+              // 頂部紅色標籤膠囊
+              ctx.fillStyle = '#f43f5e';
+              ctx.beginPath();
+              if (ctx.roundRect) {
+                ctx.roundRect(boxX, boxY, boxWidth, boxHeight, 4);
+              } else {
+                ctx.rect(boxX, boxY, boxWidth, boxHeight);
+              }
+              ctx.fill();
+
+              // 向下虛線導引線至數據點
+              ctx.shadowBlur = 0;
+              ctx.shadowOffsetY = 0;
+              ctx.strokeStyle = 'rgba(244, 63, 94, 0.5)';
+              ctx.lineWidth = 1;
+              ctx.setLineDash([3, 3]);
+              ctx.beginPath();
+              ctx.moveTo(px, boxY + boxHeight);
+              ctx.lineTo(px, py - 4);
+              ctx.stroke();
+
+              // 文字
+              ctx.fillStyle = '#ffffff';
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              ctx.fillText(text, boxX + boxWidth / 2, boxY + boxHeight / 2);
+              ctx.restore();
+            }
+          }
+        ],
         options: {
           responsive: true,
           maintainAspectRatio: false,
           interaction: { mode: 'index', intersect: false },
           layout: {
-            padding: { top: 12, bottom: 8, left: 6, right: 6 }
+            padding: { top: 34, bottom: 8, left: 6, right: 6 }
           },
           plugins: {
             legend: {
@@ -1145,12 +1212,12 @@
                   if (idx === 120) return '#f43f5e';
                   return '#cbd5e1';
                 },
-                font: { size: 12, weight: '600' },
+                font: { size: 11, weight: '600' },
                 maxRotation: 0,
                 autoSkip: false,
                 callback: function(val, idx) {
-                  if (!isHourly) return this.getLabelForValue(val);
-                  const dayNames = ['8/26', '8/27', '8/28', '8/29', '8/30', '8/31 (事故日)', '9/01', '9/02'];
+                  if (!isHourly) return dates[idx];
+                  const dayNames = ['8/26', '8/27', '8/28', '8/29', '8/30', '8/31', '9/01', '9/02'];
                   if (idx % 24 === 0) {
                     const dayIdx = Math.floor(idx / 24);
                     return dayNames[dayIdx] || '';
