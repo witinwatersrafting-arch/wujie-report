@@ -926,6 +926,77 @@
         </div>
       </div>
     </div>
+
+    <!-- Section 5: Official OpenData & API Source Citations -->
+    <div class="card" style="margin-top: 1.75rem; border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(15, 23, 42, 0.85);">
+      <div class="card-header" style="flex-direction: column; align-items: flex-start; gap: 0.35rem;">
+        <div class="card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          本站數據與影像公開資料來源 (Open Data Sources)
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+          全站內容 100% 串接台灣政府公開資料平台、水利署與台電官方水情 API，絕無人工修飾或主觀揣測。
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.85rem; margin-top: 0.5rem;">
+        <!-- 來源 1: 水利署水庫水情 OpenAPI -->
+        <div style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
+            <strong style="color: #38bdf8; font-size: 0.875rem;">經濟部水利署水庫水情 API</strong>
+            <span style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">FHY OpenAPI</span>
+          </div>
+          <p style="font-size: 0.775rem; color: #cbd5e1; line-height: 1.55; margin: 0 0 0.5rem 0;">
+            提供武界壩 (測站代碼 20507) 每日進水量、出水量 (萬噸) 及日平均放流量 (CMS) 客觀實測值。
+          </p>
+          <a href="https://fhy.wra.gov.tw/fhyv2/" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+            水利署防災資訊網 ↗
+          </a>
+        </div>
+
+        <!-- 來源 2: 寶石橋河川即時水位時資料 -->
+        <div style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
+            <strong style="color: #38bdf8; font-size: 0.875rem;">河川即時水文資料庫</strong>
+            <span style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">1510H075</span>
+          </div>
+          <p style="font-size: 0.775rem; color: #cbd5e1; line-height: 1.55; margin: 0 0 0.5rem 0;">
+            提供濁水溪下游寶石橋測站 8/26～9/02 連續 168 小時逐時河川水面標高歷線 (m) 與警戒高對照。
+          </p>
+          <a href="https://gweb.wra.gov.tw/wdata/" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+            水文水資源資料庫 ↗
+          </a>
+        </div>
+
+        <!-- 來源 3: 國家災防中心 NCDR / CBS 警報 -->
+        <div style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
+            <strong style="color: #38bdf8; font-size: 0.875rem;">NCDR 災防告警廣播 (CBS)</strong>
+            <span style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">CAP XML Feed</span>
+          </div>
+          <p style="font-size: 0.775rem; color: #cbd5e1; line-height: 1.55; margin: 0 0 0.5rem 0;">
+            收錄台電大觀發電廠與萬大發電廠對武界壩、霧社水庫發布之法定放流與洩洪預警通報原文。
+          </p>
+          <a href="https://cbs.tw" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+            國家災防警報平台 (cbs.tw) ↗
+          </a>
+        </div>
+
+        <!-- 來源 4: 孫海橋 CCTV 影像監控站 -->
+        <div style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
+            <strong style="color: #38bdf8; font-size: 0.875rem;">水利署第四河川分署 CCTV</strong>
+            <span style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">wra-002326</span>
+          </div>
+          <p style="font-size: 0.775rem; color: #cbd5e1; line-height: 1.55; margin: 0 0 0.5rem 0;">
+            串接南投縣信義鄉孫海橋監控測站 8/25～9/01 每日 24 小時歷史影像快照與即時河況串流。
+          </p>
+          <a href="https://www.twipcam.com/cam/wra-002326" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+            twipcam 孫海橋監控頁面 ↗
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
