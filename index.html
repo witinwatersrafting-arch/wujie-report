@@ -724,6 +724,99 @@
       </div>
     </div>
 
+    <!-- Section: NCDR Daily Rainfall Map (8/25 - 9/01) -->
+    <div class="card">
+      <div class="card-header" style="flex-direction: column; align-items: flex-start; gap: 0.35rem;">
+        <div class="card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25M8 19v2M8 13v2M16 19v2M16 13v2M12 21v2M12 15v2"/></svg>
+          濁水溪流域與全台歷史日累積雨量圖 (8/25 - 9/01)
+        </div>
+        <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+          圖資來源：國家災害防救科技中心 (NCDR Watch) 歷史日雨圖系統。清晰呈現 8/25～8/28 上游中部山區紫/紅色暴雨熱區，與 8/29～8/30 降雨顯著趨緩之客觀天氣歷程。
+        </p>
+      </div>
+
+      <!-- Rainmap Date Controls -->
+      <div style="margin-top: 0.5rem;">
+        <div class="date-selector" style="margin-bottom: 0.75rem;">
+          <button class="date-btn" id="btnRain-2026-08-25" onclick="selectRainDate('2026-08-25')">8/25</button>
+          <button class="date-btn" id="btnRain-2026-08-26" onclick="selectRainDate('2026-08-26')">8/26</button>
+          <button class="date-btn" id="btnRain-2026-08-27" onclick="selectRainDate('2026-08-27')">8/27</button>
+          <button class="date-btn" id="btnRain-2026-08-28" onclick="selectRainDate('2026-08-28')">8/28</button>
+          <button class="date-btn" id="btnRain-2026-08-29" onclick="selectRainDate('2026-08-29')">8/29</button>
+          <button class="date-btn highlight-btn active" id="btnRain-2026-08-30" onclick="selectRainDate('2026-08-30')">8/30 (事故日)</button>
+          <button class="date-btn" id="btnRain-2026-08-31" onclick="selectRainDate('2026-08-31')">8/31</button>
+          <button class="date-btn" id="btnRain-2026-09-01" onclick="selectRainDate('2026-09-01')">9/01</button>
+        </div>
+
+        <!-- Main Rainmap Display Box -->
+        <div style="background: rgba(11, 15, 25, 0.9); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 0.75rem; padding: 0.85rem; display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.4rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span id="rainmapDateBadge" style="background: rgba(244, 63, 94, 0.15); border: 1px solid rgba(244, 63, 94, 0.4); color: var(--accent-rose); font-size: 0.8rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 4px;">
+                2026-08-30 (事故日)
+              </span>
+              <span style="font-size: 0.75rem; color: #94a3b8;">全日累積降雨量觀測</span>
+            </div>
+            <a id="rainmapSourceLink" href="https://watch.ncdr.nat.gov.tw/watch_history_rainmap" target="_blank" rel="noopener noreferrer" style="font-size: 0.75rem; color: #38bdf8; text-decoration: none;">
+              查看 NCDR 原圖 ↗
+            </a>
+          </div>
+
+          <!-- Rainmap Image Container -->
+          <div style="width: 100%; max-width: 520px; min-height: 280px; background: #000; border-radius: 0.5rem; overflow: hidden; display: flex; justify-content: center; align-items: center; position: relative;">
+            <img id="mainRainmapImg" src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-30.png" alt="NCDR 歷史日累積雨量圖" style="width: 100%; height: auto; display: block; object-fit: contain; max-height: 480px;" />
+          </div>
+
+          <!-- Hydrological Analysis Note for Current Day -->
+          <div id="rainmapDesc" style="margin-top: 0.75rem; width: 100%; background: rgba(15, 23, 42, 0.7); border-left: 3px solid var(--accent-rose); border-radius: 0.35rem; padding: 0.65rem 0.85rem; font-size: 0.8rem; color: #cbd5e1; line-height: 1.55;">
+            <strong>8/30 降雨特徵分析</strong>：中部南投山區降雨顯著緩和減弱，主要降雨系統已遠離，僅剩局部微弱零星對流。印證當日濁水溪水情處於連續大水後之<strong>自然退水／自然洩降期</strong>。
+          </div>
+        </div>
+
+        <!-- 8-Day Thumbnail Strip -->
+        <div style="margin-top: 1rem;">
+          <div style="font-size: 0.75rem; color: #94a3b8; font-weight: 700; margin-bottom: 0.4rem;">
+            8/25 ～ 9/01 全時段降雨演變縮圖（點擊快速切換）：
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 0.5rem;">
+            <div onclick="selectRainDate('2026-08-25')" class="rain-thumb-card" id="thumb-2026-08-25" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+              <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">8/25</div>
+              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-25.png" alt="8/25" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+            </div>
+            <div onclick="selectRainDate('2026-08-26')" class="rain-thumb-card" id="thumb-2026-08-26" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+              <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">8/26</div>
+              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-26.png" alt="8/26" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+            </div>
+            <div onclick="selectRainDate('2026-08-27')" class="rain-thumb-card" id="thumb-2026-08-27" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+              <div style="font-size: 0.7rem; font-weight: 700; color: var(--accent-amber); margin-bottom: 0.2rem;">8/27 (暴雨)</div>
+              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-27.png" alt="8/27" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+            </div>
+            <div onclick="selectRainDate('2026-08-28')" class="rain-thumb-card" id="thumb-2026-08-28" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+              <div style="font-size: 0.7rem; font-weight: 700; color: var(--accent-amber); margin-bottom: 0.2rem;">8/28 (高峰)</div>
+              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-28.png" alt="8/28" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+            </div>
+            <div onclick="selectRainDate('2026-08-29')" class="rain-thumb-card" id="thumb-2026-08-29" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+              <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">8/29</div>
+              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-29.png" alt="8/29" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+            </div>
+            <div onclick="selectRainDate('2026-08-30')" class="rain-thumb-card" id="thumb-2026-08-30" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 2px solid var(--accent-rose); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+              <div style="font-size: 0.7rem; font-weight: 800; color: var(--accent-rose); margin-bottom: 0.2rem;">8/30 (事故日)</div>
+              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-30.png" alt="8/30" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+            </div>
+            <div onclick="selectRainDate('2026-08-31')" class="rain-thumb-card" id="thumb-2026-08-31" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+              <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">8/31</div>
+              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-31.png" alt="8/31" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+            </div>
+            <div onclick="selectRainDate('2026-09-01')" class="rain-thumb-card" id="thumb-2026-09-01" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+              <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">9/01</div>
+              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-09-01.png" alt="9/01" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Section 2: Charts (Vertical Full-Width Stack) -->
     <!-- Chart 1: 武界壩流量 -->
     <div class="card">
@@ -1074,6 +1167,20 @@
           </p>
           <a href="https://www.twipcam.com/cam/wra-002326" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
             twipcam 孫海橋監控頁面 ↗
+          </a>
+        </div>
+
+        <!-- 來源 5: NCDR 歷史日累積雨量圖系統 -->
+        <div style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
+            <strong style="color: #38bdf8; font-size: 0.875rem;">NCDR 歷史日雨圖系統</strong>
+            <span style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">NCDR Watch</span>
+          </div>
+          <p style="font-size: 0.775rem; color: #cbd5e1; line-height: 1.55; margin: 0 0 0.5rem 0;">
+            提供 8/25～9/01 全台與濁水溪集水區逐日累積雨量圖 (QPF/雨量觀測網)，還原暴雨高峰至趨緩之氣象時序。
+          </p>
+          <a href="https://watch.ncdr.nat.gov.tw/watch_history_rainmap" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+            NCDR 天氣與氣候監測網 ↗
           </a>
         </div>
       </div>
@@ -1533,6 +1640,68 @@
 
     // 預設渲染時資料 (與官方截圖完全一致)
     renderBaoshiChart('hourly');
+
+    // 5. NCDR 歷史日累積雨量圖切換邏輯
+    const RAIN_DESCRIPTIONS = {
+      "2026-08-25": "<strong>8/25 降雨特徵</strong>：全台西南風與大氣水氣充沛，中部山區與南投仁愛鄉出現持續降雨，累積雨量達大雨等級，流域基流迅速由常態拉升至 197.88 CMS。",
+      "2026-08-26": "<strong>8/26 降雨特徵</strong>：中部山區持續迎風面降雨，集水區土壤維持高度飽和，武界壩出流維持在 149.33 CMS 之大水基流。",
+      "2026-08-27": "<strong>8/27 降雨特徵 (暴雨期)</strong>：中央山脈主脊與南投山區出現劇烈強降雨（紫紅高累積雨量區集中於濁水溪上游），台電萬大發電廠於 11:41 發布霧社水庫放水警戒。",
+      "2026-08-28": "<strong>8/28 降雨特徵 (全期雨量高峰)</strong>：暴雨累積達到全期最劇烈高峰，上游集水區多處呈現紫紅色強降雨，萬大電廠 12:40 再度發布霧社放水警戒，武界壩流量飆升至全期次高峰 166.58 CMS（出水量 1,439 萬噸）。",
+      "2026-08-29": "<strong>8/29 降雨特徵</strong>：強降雨系統顯著減弱東移，南投山區雨勢大幅收斂，武界壩流量自高點快速洩降至 81.50 CMS。",
+      "2026-08-30": "<strong>8/30 降雨特徵 (事故當日)</strong>：中部南投山區降雨顯著緩和減弱，主要降雨系統已遠離，僅剩局部微弱零星對流。印證當日濁水溪水情處於連續大水後之<strong>自然退水／自然洩降期</strong>（出流 73.00 CMS）。",
+      "2026-08-31": "<strong>8/31 降雨特徵</strong>：全區天氣進一步轉穩定，山區降雨微弱，武界壩出流量續降至 40.33 CMS。",
+      "2026-09-01": "<strong>9/01 降雨特徵</strong>：午後對流雲系再度發展，山區出現局部短暫陣雨，台電武界壩於 14:21 發布調節放水警戒（排洪至 64.58 CMS）。"
+    };
+
+    function selectRainDate(dateStr) {
+      const year = dateStr.slice(0, 4);
+      const imgUrl = `https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/${year}/s_rainmap_${dateStr}.png`;
+      const imgEl = document.getElementById('mainRainmapImg');
+      const badgeEl = document.getElementById('rainmapDateBadge');
+      const descEl = document.getElementById('rainmapDesc');
+
+      if (imgEl) imgEl.src = imgUrl;
+
+      // 更新按鈕 active 狀態
+      const allDates = ['2026-08-25', '2026-08-26', '2026-08-27', '2026-08-28', '2026-08-29', '2026-08-30', '2026-08-31', '2026-09-01'];
+      allDates.forEach(d => {
+        const btn = document.getElementById(`btnRain-${d}`);
+        if (btn) {
+          if (d === dateStr) {
+            btn.classList.add('active');
+            if (d === '2026-08-30') btn.classList.add('highlight-btn');
+          } else {
+            btn.classList.remove('active');
+          }
+        }
+
+        const thumb = document.getElementById(`thumb-${d}`);
+        if (thumb) {
+          if (d === dateStr) {
+            thumb.style.borderColor = d === '2026-08-30' ? 'var(--accent-rose)' : 'var(--accent-blue)';
+            thumb.style.transform = 'scale(1.03)';
+            thumb.style.boxShadow = '0 4px 12px rgba(56, 189, 248, 0.25)';
+          } else {
+            thumb.style.borderColor = d === '2026-08-30' ? 'var(--accent-rose)' : 'rgba(255,255,255,0.08)';
+            thumb.style.transform = 'scale(1)';
+            thumb.style.boxShadow = 'none';
+          }
+        }
+      });
+
+      // 更新 Badge 與分析文字
+      if (badgeEl) {
+        badgeEl.innerText = dateStr === '2026-08-30' ? '2026-08-30 (事故日)' : dateStr;
+        badgeEl.style.color = dateStr === '2026-08-30' ? 'var(--accent-rose)' : 'var(--accent-blue)';
+        badgeEl.style.borderColor = dateStr === '2026-08-30' ? 'rgba(244, 63, 94, 0.4)' : 'rgba(56, 189, 248, 0.4)';
+        badgeEl.style.background = dateStr === '2026-08-30' ? 'rgba(244, 63, 94, 0.15)' : 'rgba(56, 189, 248, 0.15)';
+      }
+
+      if (descEl) {
+        descEl.innerHTML = RAIN_DESCRIPTIONS[dateStr] || '';
+        descEl.style.borderLeftColor = dateStr === '2026-08-30' ? 'var(--accent-rose)' : 'var(--accent-blue)';
+      }
+    }
 
     function exportCSV() {
       const table = document.getElementById("rawTable");
