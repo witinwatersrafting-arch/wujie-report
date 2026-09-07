@@ -73,6 +73,14 @@
               "@type": "Answer",
               "text": "官方資料庫顯示，最上游萬大發電廠於 8/27 11:41 與 8/28 12:40 連續發布『霧社水庫放水警戒』，上游開閘放水直接促使下游武界壩流量飆升至 136～166 CMS。"
             }
+          },
+          {
+            "@type": "Question",
+            "name": "為什麼濁水溪武界段的水量與航行水況極難預先判讀？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "濁水溪武界段的水量預判面臨五大客觀水文變數：1. 武界壩無即時流量數據僅有日平均，易有日夜放水峰值落差，需搭配下游寶石橋水位逆推；2. 卡社溪與丹大溪等沿途支流集水區廣大，支流水量常超越主流本體；3. 栗栖溪（一線天附近）水利引水機制隨水庫蓄水位切換，滿庫時巨量匯入；4. 連日降雨後地表與邊坡土壤含水飽和，延遲滲出無法由雷達量化；5. 關鍵隘口孫海橋僅設有 CCTV 監視畫面，缺乏即時水位計與流量計。"
+            }
           }
         ]
       }
@@ -683,6 +691,110 @@
         </div>
         <div class="stat-value text-purple">346.06<span class="stat-unit">m</span></div>
         <div class="stat-desc text-muted">08:00 標高實測值</div>
+      </div>
+    </div>
+
+    <!-- Section: Hydrology Analysis & Navigation Assessment -->
+    <div class="card" id="hydrology-guide" style="border: 1px solid rgba(56, 189, 248, 0.25); background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(11, 15, 25, 0.95));">
+      <div class="card-header" style="flex-direction: column; align-items: flex-start; gap: 0.4rem;">
+        <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; font-size: 0.75rem; font-weight: 800; padding: 0.15rem 0.6rem; border-radius: 9999px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          水文特徵深度解析 · 航行判讀限制
+        </div>
+        <h2 class="card-title" style="font-size: 1.35rem; font-weight: 800; color: #fff; margin-top: 0.2rem;">
+          為什麼濁水溪「武界段」的水量極難預先判讀？
+        </h2>
+        <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.6; margin: 0; max-width: 900px;">
+          對於非水文專業者與激流航行者而言，濁水溪武界至巴庫拉斯、孫海橋航段的真實水量常產生嚴重的判讀誤區。單看水庫放流數據無法反映河道真實全貌，主要受制於以下五大水文關鍵變數：
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; margin-top: 0.75rem;">
+        <!-- 變數 1 -->
+        <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.75rem; font-weight: 800; color: #38bdf8; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數 01</span>
+              <span style="font-size: 0.725rem; color: #64748b; font-weight: 600;">數據盲區</span>
+            </div>
+            <h3 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.45rem;">
+              水庫放流缺乏即時數據，僅有「日平均」盲區
+            </h3>
+            <p style="font-size: 0.825rem; color: #cbd5e1; line-height: 1.6; margin: 0;">
+              水利官方公開資訊僅揭露武界壩的「全日平均放流量 (CMS)」與「日累積出水量」，並未提供每小時即時放流曲線。實務上極常出現「夜間集中排洪、日間小量出流」的波形分佈。若單看日平均 70 CMS，極可能誤判為全天平穩，實際上河道在不同時段可能面臨暴漲洪峰或枯水。必須搭配下游「寶石橋水位站」的即時波峰走勢，逆推壩體放流的高峰時段與水峰傳遞延遲。
+            </p>
+          </div>
+        </div>
+
+        <!-- 變數 2 -->
+        <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.75rem; font-weight: 800; color: #fbbf24; background: rgba(251, 191, 36, 0.15); border: 1px solid rgba(251, 191, 36, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數 02</span>
+              <span style="font-size: 0.725rem; color: #64748b; font-weight: 600;">支流匯流</span>
+            </div>
+            <h3 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.45rem;">
+              沿途大型支流匯入，水量往往超越主流本體
+            </h3>
+            <p style="font-size: 0.825rem; color: #cbd5e1; line-height: 1.6; margin: 0;">
+              武界至孫海橋沿線匯聚了「卡社溪」、「丹大溪」等高山廣大集水區。當武界壩處於低放水或甚至完全不放水時，光是卡社溪與丹大溪等支流所匯集的自然暴雨逕流，就足以形成巨大水體，其水量甚至經常大幅超越濁水溪主流本身。僅監測武界壩出口，根本無法代表中下游峽谷內部的實際航行水勢。
+            </p>
+          </div>
+        </div>
+
+        <!-- 變數 3 -->
+        <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.75rem; font-weight: 800; color: #f43f5e; background: rgba(244, 63, 94, 0.15); border: 1px solid rgba(244, 63, 94, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數 03</span>
+              <span style="font-size: 0.725rem; color: #64748b; font-weight: 600;">水工調度</span>
+            </div>
+            <h3 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.45rem;">
+              栗栖溪越域引水切換，滿庫時形成突發巨流
+            </h3>
+            <p style="font-size: 0.825rem; color: #cbd5e1; line-height: 1.6; margin: 0;">
+              位於武界「一線天」附近的栗栖溪支流建有栗栖壩。正常情況下，溪水會被引水隧道截流導入武界壩蓄存發電，不進入主流；然而一旦武界水庫接近滿水位或遭遇大水，引水系統停止運轉或溢流，原先被導走的栗栖溪暴水將全部回歸濁水溪主流，瞬間成為一條未經預警但水量驚人的強勁支流。
+            </p>
+          </div>
+        </div>
+
+        <!-- 變數 4 -->
+        <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.75rem; font-weight: 800; color: #34d399; background: rgba(52, 211, 153, 0.15); border: 1px solid rgba(52, 211, 153, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數 04</span>
+              <span style="font-size: 0.725rem; color: #64748b; font-weight: 600;">土壤水文</span>
+            </div>
+            <h3 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.45rem;">
+              連日降雨土壤吸飽飽和，延遲湧出無法量化
+            </h3>
+            <p style="font-size: 0.825rem; color: #cbd5e1; line-height: 1.6; margin: 0;">
+              在經歷 8/25～8/28 的連續豪大雨後，濁水溪兩岸陡峭邊坡與沿途眾多無名野溪的土壤含水量均達 100% 飽和狀態。即使後續天空降雨顯著停緩，飽和的地下水層與邊坡仍會以地表逕流形式持續外湧。這種「土壤滯後蓄水效應」會讓峽谷水位維持在反常的高基流，且累積水量完全無法從氣象降雨即時雷達中直觀預測。
+            </p>
+          </div>
+        </div>
+
+        <!-- 變數 5 -->
+        <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.75rem; font-weight: 800; color: #a855f7; background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數 05</span>
+              <span style="font-size: 0.725rem; color: #64748b; font-weight: 600;">觀測限制</span>
+            </div>
+            <h3 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.45rem;">
+              最關鍵的孫海橋隘口，僅有 CCTV 而無水位計
+            </h3>
+            <p style="font-size: 0.825rem; color: #cbd5e1; line-height: 1.6; margin: 0;">
+              孫海橋（丹大溪與濁水溪匯流處）是全航段最能客觀反映出谷總水量的關鍵分界點。然而此處並無設置官方自動河川水位計或流量測站，僅有一支水利監視用 CCTV（wra-002326）。下水者與搜救單位無法取得具體的公尺 (m) 水位或 CMS 數值，只能依賴影像中的沙洲露頭、橋墩水痕與水流波紋進行經驗目測，增加極大的客觀評估難度。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 總結提示條 -->
+      <div style="margin-top: 1rem; background: rgba(56, 189, 248, 0.08); border-left: 3px solid #38bdf8; border-radius: 0.4rem; padding: 0.75rem 1rem; font-size: 0.825rem; color: #cbd5e1; line-height: 1.6;">
+        <strong style="color: #fff;">綜合判讀結論：</strong>
+        評估濁水溪武界段是否適航，絕不可單一依賴「水庫放流公告」或「日平均數字」。航行決策必須採取複合式驗證：<strong>檢視孫海橋歷史畫面地標淹沒程度</strong> ＋ <strong>比對下游寶石橋逐時水位波峰波谷</strong> ＋ <strong>盤查卡社與丹大溪集水區前 72 小時累積雨量</strong>，方能客觀防範非預期性水量巨變。
       </div>
     </div>
 
