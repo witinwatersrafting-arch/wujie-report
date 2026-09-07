@@ -702,7 +702,7 @@
             </h3>
             <p style="font-size: 0.825rem; color: #cbd5e1; line-height: 1.6; margin: 0;">
               武界壩以下至雙龍一帶，濁水溪主流陸續匯入<strong>栗栖溪</strong>、<strong>卡社溪</strong>及<strong>丹大溪</strong>等大型天然支流。其中栗栖溪集水區約 39.4 km²、卡社溪約 145.5 km²，丹大溪依不同流域劃分口徑約為 265 km²，較廣義的丹大水系則有資料估計達 400 km² 以上。相較之下，武界壩控制的集水區約為 501 km²。<br><br>
-              因此，武界壩以下河段的實際水量並非單純由武界壩放流所決定；隨著沿線大型天然支流陸續匯入，下游流量及水文條件會受到局部降雨、各支流集水區逕流與匯流時間差等多重物理因素影響。
+              因此，武界壩以下河段的實際水量並非單純由武界壩放流所決定；隨著沿線大型天然支流陸續匯入，下游流量及水文條件會受到局部降雨、各支流集水區逕流與匯流時間差等多重物理因素影響。換言之，單獨以武界壩放流量作為武界至雙龍河段的水文判斷依據，無法完整反映下游實際水量變化。
             </p>
           </div>
         </div>
@@ -841,7 +841,7 @@
 
           <!-- Rainmap Image Container -->
           <div style="width: 100%; max-width: 520px; min-height: 280px; background: #000; border-radius: 0.5rem; overflow: hidden; display: flex; justify-content: center; align-items: center; position: relative;">
-            <img id="mainRainmapImg" src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-30.png" alt="NCDR 歷史日累積雨量圖" style="width: 100%; height: auto; display: block; object-fit: contain; max-height: 480px;" />
+            <img id="mainRainmapImg" src="./rainmap/s_rainmap_2026-08-30.png" alt="NCDR 歷史日累積雨量圖" style="width: 100%; height: auto; display: block; object-fit: contain; max-height: 480px;" />
           </div>
 
           <!-- Hydrological Analysis Note for Current Day -->
@@ -858,35 +858,35 @@
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 0.5rem;">
             <div onclick="selectRainDate('2026-08-25')" class="rain-thumb-card" id="thumb-2026-08-25" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
               <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">8/25</div>
-              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-25.png" alt="8/25" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+              <img src="./rainmap/s_rainmap_2026-08-25.png" alt="8/25" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
             <div onclick="selectRainDate('2026-08-26')" class="rain-thumb-card" id="thumb-2026-08-26" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
               <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">8/26</div>
-              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-26.png" alt="8/26" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+              <img src="./rainmap/s_rainmap_2026-08-26.png" alt="8/26" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
             <div onclick="selectRainDate('2026-08-27')" class="rain-thumb-card" id="thumb-2026-08-27" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
               <div style="font-size: 0.7rem; font-weight: 700; color: var(--accent-amber); margin-bottom: 0.2rem;">8/27 (暴雨)</div>
-              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-27.png" alt="8/27" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+              <img src="./rainmap/s_rainmap_2026-08-27.png" alt="8/27" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
             <div onclick="selectRainDate('2026-08-28')" class="rain-thumb-card" id="thumb-2026-08-28" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
               <div style="font-size: 0.7rem; font-weight: 700; color: var(--accent-amber); margin-bottom: 0.2rem;">8/28 (高峰)</div>
-              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-28.png" alt="8/28" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+              <img src="./rainmap/s_rainmap_2026-08-28.png" alt="8/28" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
             <div onclick="selectRainDate('2026-08-29')" class="rain-thumb-card" id="thumb-2026-08-29" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
               <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">8/29</div>
-              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-29.png" alt="8/29" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+              <img src="./rainmap/s_rainmap_2026-08-29.png" alt="8/29" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
             <div onclick="selectRainDate('2026-08-30')" class="rain-thumb-card" id="thumb-2026-08-30" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 2px solid var(--accent-rose); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
               <div style="font-size: 0.7rem; font-weight: 800; color: var(--accent-rose); margin-bottom: 0.2rem;">8/30 (事故日)</div>
-              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-30.png" alt="8/30" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+              <img src="./rainmap/s_rainmap_2026-08-30.png" alt="8/30" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
             <div onclick="selectRainDate('2026-08-31')" class="rain-thumb-card" id="thumb-2026-08-31" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
               <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">8/31</div>
-              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-08-31.png" alt="8/31" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+              <img src="./rainmap/s_rainmap_2026-08-31.png" alt="8/31" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
             <div onclick="selectRainDate('2026-09-01')" class="rain-thumb-card" id="thumb-2026-09-01" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
               <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">9/01</div>
-              <img src="https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/2026/s_rainmap_2026-09-01.png" alt="9/01" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+              <img src="./rainmap/s_rainmap_2026-09-01.png" alt="9/01" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
           </div>
         </div>
@@ -1749,8 +1749,7 @@
     };
 
     function selectRainDate(dateStr) {
-      const year = dateStr.slice(0, 4);
-      const imgUrl = `https://watch.ncdr.nat.gov.tw/00_Wxmap/8A4_HISTORY_RAINMAP/${year}/s_rainmap_${dateStr}.png`;
+      const imgUrl = `./rainmap/s_rainmap_${dateStr}.png`;
       const imgEl = document.getElementById('mainRainmapImg');
       const badgeEl = document.getElementById('rainmapDateBadge');
       const descEl = document.getElementById('rainmapDesc');
