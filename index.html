@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW" class="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>濁水溪 8/30 背包艇搜救事故水文事實彙整 (8/24 - 9/1) | 台灣激流實驗室</title>
-  <meta name="description" content="針對 2026 年 8/30 南投濁水溪背包艇搜救與消防員殉職事件，台灣激流實驗室彙整 8/24 至 9/1 水利署武界壩實測放流量 (CMS)、孫海橋 24 小時歷史快照、寶石橋水位歷線與官方水庫放流警戒紀錄。排除媒體渲染，以客觀水文數據呈現真實流況與水理歷程。">
-  <meta name="keywords" content="濁水溪背包艇, 濁水溪消防員, 濁水溪搜救, 濁水溪暴漲, 濁水溪泛舟, 武界壩放水, 孫海橋即時影像, 孫海橋CCTV, 寶石橋水位, 伍程嶸, 南投消防信義分隊, 巴庫拉斯搜救, 濁水溪水文, 台灣激流實驗室, 背包艇安全, 霧社水庫放水">
+  <meta name="description"
+    content="針對 2026 年 8/30 南投濁水溪背包艇搜救與消防員殉職事件，台灣激流實驗室彙整 8/24 至 9/1 水利署武界壩實測放流量 (CMS)、孫海橋 24 小時歷史快照、寶石橋水位歷線與官方水庫放流警戒紀錄。排除媒體渲染，以客觀水文數據呈現真實流況與水理歷程。">
+  <meta name="keywords"
+    content="濁水溪背包艇, 濁水溪消防員, 濁水溪搜救, 濁水溪暴漲, 濁水溪泛舟, 武界壩放水, 孫海橋即時影像, 孫海橋CCTV, 寶石橋水位, 伍程嶸, 南投消防信義分隊, 巴庫拉斯搜救, 濁水溪水文, 台灣激流實驗室, 背包艇安全, 霧社水庫放水">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="author" content="台灣激流實驗室 (Taiwan Whitewater Lab)">
 
@@ -13,7 +16,8 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="台灣激流實驗室 Taiwan Whitewater Lab">
   <meta property="og:title" content="濁水溪 8/30 背包艇搜救事故水文事實彙整表 (8/24 - 9/1) — 台灣激流實驗室">
-  <meta property="og:description" content="針對南投濁水溪背包艇搜救事件，台灣激流實驗室公開官方武界壩放流量 (CMS)、孫海橋歷史快照及寶石橋水位歷線，以客觀實測數據還原真實流況與放流警戒時序。">
+  <meta property="og:description"
+    content="針對南投濁水溪背包艇搜救事件，台灣激流實驗室公開官方武界壩放流量 (CMS)、孫海橋歷史快照及寶石橋水位歷線，以客觀實測數據還原真實流況與放流警戒時序。">
   <meta property="og:url" content="https://witinwatersrafting-arch.github.io/wujie-report/">
   <meta property="og:image" content="https://c01.twipcam.com/cam/snapshot/wra-002326.jpg">
 
@@ -91,7 +95,9 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg-primary: #0b0f19;
@@ -119,7 +125,7 @@
       min-height: 100vh;
       padding: 2rem 1rem;
       line-height: 1.5;
-      background-image: 
+      background-image:
         radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
         radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.06) 0%, transparent 45%);
     }
@@ -248,11 +254,25 @@
       margin-top: 0.4rem;
     }
 
-    .text-rose { color: var(--accent-rose); }
-    .text-amber { color: var(--accent-amber); }
-    .text-emerald { color: var(--accent-emerald); }
-    .text-blue { color: var(--accent-blue); }
-    .text-purple { color: var(--accent-purple); }
+    .text-rose {
+      color: var(--accent-rose);
+    }
+
+    .text-amber {
+      color: var(--accent-amber);
+    }
+
+    .text-emerald {
+      color: var(--accent-emerald);
+    }
+
+    .text-blue {
+      color: var(--accent-blue);
+    }
+
+    .text-purple {
+      color: var(--accent-purple);
+    }
 
     .grid-2 {
       display: grid;
@@ -369,8 +389,15 @@
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
     }
 
     .cctv-timeline-box {
@@ -427,7 +454,8 @@
       transition: all 0.2s;
     }
 
-    .date-btn:hover, .date-btn.active {
+    .date-btn:hover,
+    .date-btn.active {
       background: var(--accent-blue);
       color: #000;
       border-color: var(--accent-blue);
@@ -609,7 +637,8 @@
         gap: 0.5rem !important;
       }
 
-      th, td {
+      th,
+      td {
         padding: 0.55rem 0.45rem !important;
         font-size: 0.78rem !important;
       }
@@ -626,30 +655,40 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <!-- Header -->
     <header class="header">
       <div class="header-top">
         <div>
-          <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; font-size: 0.725rem; font-weight: 800; padding: 0.15rem 0.55rem; border-radius: 9999px; margin-bottom: 0.5rem;">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/></svg>
+          <div
+            style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; font-size: 0.725rem; font-weight: 800; padding: 0.15rem 0.55rem; border-radius: 9999px; margin-bottom: 0.5rem;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24" />
+            </svg>
             台灣激流實驗室 · 客觀水文研究專題
           </div>
           <h1 class="title" style="margin-top: 0;">濁水溪 8/30 背包艇搜救事故水文事實彙整表</h1>
-          <p class="subtitle" style="color: #cbd5e1; font-weight: 600; margin-top: 0.35rem;">以官方公開數據還原真實流況：上中下游聯測流量、水位、監視影像與放流警報 (8/24 - 9/1)</p>
+          <p class="subtitle" style="color: #cbd5e1; font-weight: 600; margin-top: 0.35rem;">
+            以官方公開數據還原真實流況：上中下游聯測流量、水位、監視影像與放流警報 (8/24 - 9/1)</p>
           <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.55; margin-top: 0.5rem; max-width: 820px;">
-            針對 8/30 南投濁水溪背包艇搜救與消防員殉職事件，本專案剔除所有觀點推論與報導雜音，完整收錄 8/24 至 9/1 水利署武界壩實測放流量、孫海橋逐日快照、寶石橋 168 小時水位歷線與官方放水警報。以客觀實測數據為唯一依據，供戶外活動者與大眾理性審視水文環境與風險變化。
+            針對 8/30 南投濁水溪背包艇搜救與消防員殉職事件，本專案剔除所有觀點推論與報導雜音，完整收錄 8/24 至 9/1 水利署武界壩實測放流量、孫海橋逐日快照、寶石橋 168
+            小時水位歷線與官方放水警報。以客觀實測數據為唯一依據，供戶外活動者與大眾理性審視水文環境與風險變化。
           </p>
         </div>
         <button class="btn-export" onclick="exportCSV()">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+          </svg>
           匯出 CSV
         </button>
       </div>
 
       <div class="meta-tags">
-        <div class="meta-tag">發布單位：<a href="https://wwacatw.vercel.app" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 700;">台灣激流實驗室 ↗</a></div>
+        <div class="meta-tag">發布單位：<a href="https://twwlab.com" target="_blank" rel="noopener noreferrer"
+            style="color: #38bdf8; text-decoration: none; font-weight: 700;">台灣激流實驗室 ↗</a></div>
         <div class="meta-tag">水庫測站：<strong>武界壩 (20507)</strong></div>
         <div class="meta-tag">下游水位站：<strong>寶石橋 (1510H075)</strong></div>
         <div class="meta-tag">監視測站：<strong>孫海橋 CCTV (wra-002326)</strong></div>
@@ -659,10 +698,15 @@
 
 
     <!-- Section: Hydrology Analysis & Navigation Assessment -->
-    <div class="card" id="hydrology-guide" style="border: 1px solid rgba(56, 189, 248, 0.25); background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(11, 15, 25, 0.95));">
+    <div class="card" id="hydrology-guide"
+      style="border: 1px solid rgba(56, 189, 248, 0.25); background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(11, 15, 25, 0.95));">
       <div class="card-header" style="flex-direction: column; align-items: flex-start; gap: 0.4rem;">
-        <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; font-size: 0.75rem; font-weight: 800; padding: 0.15rem 0.6rem; border-radius: 9999px;">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <div
+          style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; font-size: 0.75rem; font-weight: 800; padding: 0.15rem 0.6rem; border-radius: 9999px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 16v-4M12 8h.01" />
+          </svg>
           水文特徵深度解析 · 航行判讀限制
         </div>
         <h2 class="card-title" style="font-size: 1.35rem; font-weight: 800; color: #fff; margin-top: 0.2rem;">
@@ -673,45 +717,58 @@
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; margin-top: 0.75rem;">
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1rem; margin-top: 0.75rem;">
         <!-- 變數 1 -->
-        <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div
+          style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; font-weight: 800; color: #38bdf8; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數 01</span>
+              <span
+                style="font-size: 0.75rem; font-weight: 800; color: #38bdf8; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數
+                01</span>
               <span style="font-size: 0.725rem; color: #64748b; font-weight: 600;">數據盲區</span>
             </div>
             <h3 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.45rem;">
               水庫放流缺乏即時數據，僅有「日平均」盲區
             </h3>
             <p style="font-size: 0.825rem; color: #cbd5e1; line-height: 1.6; margin: 0;">
-              水利官方公開數據僅揭露武界壩的「全日平均放流量 (CMS)」與「日累積出水量」，缺乏逐時即時放流曲線。實務上受最上游萬大發電廠配合尖峰負載發電排水，以及山區午後強降雨觸發的突發防淤排砂影響，放水常呈現陡升陡降的階梯脈衝。單看日平均 70 CMS 極易誤判全天平穩；雖可搭配下游「寶石橋水位站」波峰走勢逆推，但該站距武界達 45 公里（水峰傳遞延遲 3～5 小時）且中途混雜沿途支流，需經複合濾波推估。
+              水利官方公開數據僅揭露武界壩的「全日平均放流量
+              (CMS)」與「日累積出水量」，缺乏逐時即時放流曲線。實務上受最上游萬大發電廠配合尖峰負載發電排水，以及山區午後強降雨觸發的突發防淤排砂影響，放水常呈現陡升陡降的階梯脈衝。單看日平均 70 CMS
+              極易誤判全天平穩；雖可搭配下游「寶石橋水位站」波峰走勢逆推，但該站距武界達 45 公里（水峰傳遞延遲 3～5 小時）且中途混雜沿途支流，需經複合濾波推估。
             </p>
           </div>
         </div>
 
         <!-- 變數 2 -->
-        <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div
+          style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; font-weight: 800; color: #fbbf24; background: rgba(251, 191, 36, 0.15); border: 1px solid rgba(251, 191, 36, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數 02</span>
+              <span
+                style="font-size: 0.75rem; font-weight: 800; color: #fbbf24; background: rgba(251, 191, 36, 0.15); border: 1px solid rgba(251, 191, 36, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數
+                02</span>
               <span style="font-size: 0.725rem; color: #64748b; font-weight: 600;">支流匯流</span>
             </div>
             <h3 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.45rem;">
               沿途大型天然支流匯入，武界壩放流量不等於下游實際水量
             </h3>
             <p style="font-size: 0.825rem; color: #cbd5e1; line-height: 1.6; margin: 0;">
-              武界壩以下至雙龍一帶，濁水溪主流陸續匯入<strong>栗栖溪</strong>、<strong>卡社溪</strong>及<strong>丹大溪</strong>等大型天然支流。其中栗栖溪集水區約 39.4 km²、卡社溪約 145.5 km²，丹大溪依不同流域劃分口徑約為 265 km²，較廣義的丹大水系則有資料估計達 400 km² 以上。相較之下，武界壩控制的集水區約為 501 km²。<br><br>
+              武界壩以下至雙龍一帶，濁水溪主流陸續匯入<strong>栗栖溪</strong>、<strong>卡社溪</strong>及<strong>丹大溪</strong>等大型天然支流。其中栗栖溪集水區約 39.4
+              km²、卡社溪約 145.5 km²，丹大溪依不同流域劃分口徑約為 265 km²，較廣義的丹大水系則有資料估計達 400 km² 以上。相較之下，武界壩控制的集水區約為 501 km²。<br><br>
               因此，武界壩以下河段的實際水量並非單純由武界壩放流所決定；隨著沿線大型天然支流陸續匯入，下游流量及水文條件會受到局部降雨、各支流集水區逕流與匯流時間差等多重物理因素影響。
             </p>
           </div>
         </div>
 
         <!-- 變數 3 -->
-        <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div
+          style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; font-weight: 800; color: #f43f5e; background: rgba(244, 63, 94, 0.15); border: 1px solid rgba(244, 63, 94, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數 03</span>
+              <span
+                style="font-size: 0.75rem; font-weight: 800; color: #f43f5e; background: rgba(244, 63, 94, 0.15); border: 1px solid rgba(244, 63, 94, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數
+                03</span>
               <span style="font-size: 0.725rem; color: #64748b; font-weight: 600;">水工調度</span>
             </div>
             <h3 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.45rem;">
@@ -724,48 +781,62 @@
         </div>
 
         <!-- 變數 4 -->
-        <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div
+          style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; font-weight: 800; color: #34d399; background: rgba(52, 211, 153, 0.15); border: 1px solid rgba(52, 211, 153, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數 04</span>
+              <span
+                style="font-size: 0.75rem; font-weight: 800; color: #34d399; background: rgba(52, 211, 153, 0.15); border: 1px solid rgba(52, 211, 153, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數
+                04</span>
               <span style="font-size: 0.725rem; color: #64748b; font-weight: 600;">土壤水文</span>
             </div>
             <h3 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.45rem;">
               土壤飽和與壤中流釋出，退水歷線滯後無法量化
             </h3>
             <p style="font-size: 0.825rem; color: #cbd5e1; line-height: 1.6; margin: 0;">
-              在經歷連續豪大雨後，濁水溪兩岸陡峭板岩邊坡與沿途無名野溪的土壤含水量均達飽和。即使後續天空降雨完全停止，飽和地下水層與邊坡仍會透過<strong>「壤中流 (Interflow)」</strong>與地下基流持續向河道釋出。這種「退水歷線滯後效應 (Recession Limb)」使峽谷水位維持在相對較高之基流狀態長達數日，且這類延遲湧水量完全無法由即時氣象雷達回波直觀判讀。
+              在經歷連續豪大雨後，濁水溪兩岸陡峭板岩邊坡與沿途無名野溪的土壤含水量均達飽和。即使後續天空降雨完全停止，飽和地下水層與邊坡仍會透過<strong>「壤中流
+                (Interflow)」</strong>與地下基流持續向河道釋出。這種「退水歷線滯後效應 (Recession
+              Limb)」使峽谷水位維持在相對較高之基流狀態長達數日，且這類延遲湧水量完全無法由即時氣象雷達回波直觀判讀。
             </p>
           </div>
         </div>
 
         <!-- 變數 5 -->
-        <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
+        <div
+          style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 0.75rem; padding: 1.1rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-              <span style="font-size: 0.75rem; font-weight: 800; color: #a855f7; background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數 05</span>
+              <span
+                style="font-size: 0.75rem; font-weight: 800; color: #a855f7; background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); padding: 0.15rem 0.5rem; border-radius: 4px;">變數
+                05</span>
               <span style="font-size: 0.725rem; color: #64748b; font-weight: 600;">觀測限制</span>
             </div>
             <h3 style="font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.45rem;">
               最關鍵的孫海橋隘口，僅有監視器而無水位計
             </h3>
             <p style="font-size: 0.825rem; color: #cbd5e1; line-height: 1.6; margin: 0;">
-              孫海橋（丹大溪與濁水溪匯流處南側）是全航段最能客觀反映出谷總水量的關鍵分界點。然而現場並無配置官方自動河川水位計或流量測站，僅有一支水利監視攝影機（wra-002326）。活動者與搜救單位無法取得具體的公尺 (m) 水位或 CMS 數據，只能依賴殘存舊引道露頭、涉水便道淹沒寬度進行經驗目測；且該鏡頭於夜間缺乏照明完全失去監視功能，形成高風險情資空窗。
+              孫海橋（丹大溪與濁水溪匯流處南側）是全航段最能客觀反映出谷總水量的關鍵分界點。然而現場並無配置官方自動河川水位計或流量測站，僅有一支水利監視攝影機（wra-002326）。活動者與搜救單位無法取得具體的公尺
+              (m) 水位或 CMS 數據，只能依賴殘存舊引道露頭、涉水便道淹沒寬度進行經驗目測；且該鏡頭於夜間缺乏照明完全失去監視功能，形成高風險情資空窗。
             </p>
           </div>
         </div>
 
         <!-- 主站專題工具與相關報告導流 -->
-        <div style="grid-column: 1 / -1; background: rgba(56, 189, 248, 0.06); border: 1px dashed rgba(56, 189, 248, 0.35); border-radius: 0.75rem; padding: 1rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; font-size: 0.8rem; margin-top: 0.25rem;">
+        <div
+          style="grid-column: 1 / -1; background: rgba(56, 189, 248, 0.06); border: 1px dashed rgba(56, 189, 248, 0.35); border-radius: 0.75rem; padding: 1rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; font-size: 0.8rem; margin-top: 0.25rem;">
           <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700;">流域工具</span>
+            <span
+              style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700;">流域工具</span>
             <span style="color: #cbd5e1;">欲精確查詢台灣各溪流出水口之上游累積集水面積與逕流漏斗？</span>
           </div>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-            <a href="https://wwacatw.vercel.app/acctw/" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.4); padding: 0.35rem 0.75rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s;">
+            <a href="https://twwlab.com/acctw/" target="_blank" rel="noopener noreferrer"
+              style="color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.4); padding: 0.35rem 0.75rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s;">
               使用「集水區觀察員 accTW」逕流分析 ↗
             </a>
-            <a href="https://witinwatersrafting-arch.github.io/wujie-report/shilin-report.html" target="_blank" rel="noopener noreferrer" style="color: #34d399; background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.4); padding: 0.35rem 0.75rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s;">
+            <a href="https://witinwatersrafting-arch.github.io/wujie-report/shilin-report.html" target="_blank"
+              rel="noopener noreferrer"
+              style="color: #34d399; background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.4); padding: 0.35rem 0.75rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.2s;">
               大安溪水文 864hr 實測相關性報告 ↗
             </a>
           </div>
@@ -778,7 +849,10 @@
     <div class="card">
       <div class="card-header">
         <div class="card-title">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M23 7l-7 5 7 5V7z" />
+            <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+          </svg>
           孫海橋監控站 (wra-002326) 影像回放器
         </div>
         <a href="https://www.twipcam.com/cam/wra-002326" target="_blank" rel="noopener noreferrer" class="link-ext">
@@ -787,7 +861,8 @@
       </div>
 
       <div class="cctv-viewer-box">
-        <img id="cctvImage" class="cctv-img" referrerpolicy="no-referrer" src="https://c01.twipcam.com/cam/snapshot/wra-002326.jpg" alt="孫海橋即時影像" />
+        <img id="cctvImage" class="cctv-img" referrerpolicy="no-referrer"
+          src="https://c01.twipcam.com/cam/snapshot/wra-002326.jpg" alt="孫海橋即時影像" />
         <div class="cctv-overlay">
           <span class="cctv-dot"></span>
           <span id="cctvTimestamp">載入 8/30 快照中...</span>
@@ -802,7 +877,8 @@
           <button class="date-btn" onclick="selectDate('2026-08-27', this)">8/27</button>
           <button class="date-btn" onclick="selectDate('2026-08-28', this)">8/28</button>
           <button class="date-btn" onclick="selectDate('2026-08-29', this)">8/29</button>
-          <button id="btnDate830" class="date-btn highlight-btn active" onclick="selectDate('2026-08-30', this)">8/30 (事故日)</button>
+          <button id="btnDate830" class="date-btn highlight-btn active" onclick="selectDate('2026-08-30', this)">8/30
+            (事故日)</button>
           <button class="date-btn" onclick="selectDate('2026-08-31', this)">8/31</button>
           <button class="date-btn" onclick="selectDate('2026-09-01', this)">9/01</button>
           <button class="date-btn" onclick="selectDate('live', this)">最新即時</button>
@@ -810,8 +886,10 @@
 
         <div class="timeline-row">
           <button type="button" id="btnPlay" class="btn-play" onclick="togglePlay()">播放縮時</button>
-          <input type="range" id="cctvSlider" class="timeline-slider" min="0" max="23" value="8" oninput="onSlide(this.value)" />
-          <span id="sliderTimeLabel" style="font-size:0.85rem; font-weight:700; min-width:55px; color:#fff;">08:00</span>
+          <input type="range" id="cctvSlider" class="timeline-slider" min="0" max="23" value="8"
+            oninput="onSlide(this.value)" />
+          <span id="sliderTimeLabel"
+            style="font-size:0.85rem; font-weight:700; min-width:55px; color:#fff;">08:00</span>
         </div>
       </div>
     </div>
@@ -820,7 +898,9 @@
     <div class="card">
       <div class="card-header" style="flex-direction: column; align-items: flex-start; gap: 0.35rem;">
         <div class="card-title">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25M8 19v2M8 13v2M16 19v2M16 13v2M12 21v2M12 15v2"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25M8 19v2M8 13v2M16 19v2M16 13v2M12 21v2M12 15v2" />
+          </svg>
           濁水溪流域與全台歷史日累積雨量圖 (8/25 - 9/01)
         </div>
         <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
@@ -836,33 +916,42 @@
           <button class="date-btn" id="btnRain-2026-08-27" onclick="selectRainDate('2026-08-27')">8/27</button>
           <button class="date-btn" id="btnRain-2026-08-28" onclick="selectRainDate('2026-08-28')">8/28</button>
           <button class="date-btn" id="btnRain-2026-08-29" onclick="selectRainDate('2026-08-29')">8/29</button>
-          <button class="date-btn highlight-btn active" id="btnRain-2026-08-30" onclick="selectRainDate('2026-08-30')">8/30 (事故日)</button>
+          <button class="date-btn highlight-btn active" id="btnRain-2026-08-30"
+            onclick="selectRainDate('2026-08-30')">8/30 (事故日)</button>
           <button class="date-btn" id="btnRain-2026-08-31" onclick="selectRainDate('2026-08-31')">8/31</button>
           <button class="date-btn" id="btnRain-2026-09-01" onclick="selectRainDate('2026-09-01')">9/01</button>
         </div>
 
         <!-- Main Rainmap Display Box -->
-        <div style="background: rgba(11, 15, 25, 0.9); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 0.75rem; padding: 0.85rem; display: flex; flex-direction: column; align-items: center;">
-          <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.4rem;">
+        <div
+          style="background: rgba(11, 15, 25, 0.9); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 0.75rem; padding: 0.85rem; display: flex; flex-direction: column; align-items: center;">
+          <div
+            style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.4rem;">
             <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <span id="rainmapDateBadge" style="background: rgba(244, 63, 94, 0.15); border: 1px solid rgba(244, 63, 94, 0.4); color: var(--accent-rose); font-size: 0.8rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 4px;">
+              <span id="rainmapDateBadge"
+                style="background: rgba(244, 63, 94, 0.15); border: 1px solid rgba(244, 63, 94, 0.4); color: var(--accent-rose); font-size: 0.8rem; font-weight: 800; padding: 0.2rem 0.6rem; border-radius: 4px;">
                 2026-08-30 (事故日)
               </span>
               <span style="font-size: 0.75rem; color: #94a3b8;">全日累積降雨量觀測</span>
             </div>
-            <a id="rainmapSourceLink" href="https://watch.ncdr.nat.gov.tw/watch_history_rainmap" target="_blank" rel="noopener noreferrer" style="font-size: 0.75rem; color: #38bdf8; text-decoration: none;">
+            <a id="rainmapSourceLink" href="https://watch.ncdr.nat.gov.tw/watch_history_rainmap" target="_blank"
+              rel="noopener noreferrer" style="font-size: 0.75rem; color: #38bdf8; text-decoration: none;">
               查看 NCDR 原圖 ↗
             </a>
           </div>
 
           <!-- Rainmap Image Container -->
-          <div style="width: 100%; max-width: 520px; min-height: 280px; background: #000; border-radius: 0.5rem; overflow: hidden; display: flex; justify-content: center; align-items: center; position: relative;">
-            <img id="mainRainmapImg" src="./rainmap/s_rainmap_2026-08-30.png" alt="NCDR 歷史日累積雨量圖" style="width: 100%; height: auto; display: block; object-fit: contain; max-height: 480px;" />
+          <div
+            style="width: 100%; max-width: 520px; min-height: 280px; background: #000; border-radius: 0.5rem; overflow: hidden; display: flex; justify-content: center; align-items: center; position: relative;">
+            <img id="mainRainmapImg" src="./rainmap/s_rainmap_2026-08-30.png" alt="NCDR 歷史日累積雨量圖"
+              style="width: 100%; height: auto; display: block; object-fit: contain; max-height: 480px;" />
           </div>
 
           <!-- Hydrological Analysis Note for Current Day -->
-          <div id="rainmapDesc" style="margin-top: 0.75rem; width: 100%; background: rgba(15, 23, 42, 0.7); border-left: 3px solid var(--accent-rose); border-radius: 0.35rem; padding: 0.65rem 0.85rem; font-size: 0.8rem; color: #cbd5e1; line-height: 1.55;">
-            <strong>8/30 降雨特徵</strong>：南投山區降雨顯著趨緩，日累積雨量以局部零星微弱對流為主。當日武界壩全日平均放流量為 73.00 CMS，延續 8/28（166.58 CMS）與 8/29（81.50 CMS）之逐日遞減走勢。
+          <div id="rainmapDesc"
+            style="margin-top: 0.75rem; width: 100%; background: rgba(15, 23, 42, 0.7); border-left: 3px solid var(--accent-rose); border-radius: 0.35rem; padding: 0.65rem 0.85rem; font-size: 0.8rem; color: #cbd5e1; line-height: 1.55;">
+            <strong>8/30 降雨特徵</strong>：南投山區降雨顯著趨緩，日累積雨量以局部零星微弱對流為主。當日武界壩全日平均放流量為 73.00 CMS，延續 8/28（166.58 CMS）與
+            8/29（81.50 CMS）之逐日遞減走勢。
           </div>
         </div>
 
@@ -872,37 +961,56 @@
             8/25 ～ 9/01 全時段降雨演變縮圖（點擊快速切換）：
           </div>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 0.5rem;">
-            <div onclick="selectRainDate('2026-08-25')" class="rain-thumb-card" id="thumb-2026-08-25" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+            <div onclick="selectRainDate('2026-08-25')" class="rain-thumb-card" id="thumb-2026-08-25"
+              style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
               <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">8/25</div>
-              <img src="./rainmap/s_rainmap_2026-08-25.png" alt="8/25" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+              <img src="./rainmap/s_rainmap_2026-08-25.png" alt="8/25"
+                style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
-            <div onclick="selectRainDate('2026-08-26')" class="rain-thumb-card" id="thumb-2026-08-26" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+            <div onclick="selectRainDate('2026-08-26')" class="rain-thumb-card" id="thumb-2026-08-26"
+              style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
               <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">8/26</div>
-              <img src="./rainmap/s_rainmap_2026-08-26.png" alt="8/26" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+              <img src="./rainmap/s_rainmap_2026-08-26.png" alt="8/26"
+                style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
-            <div onclick="selectRainDate('2026-08-27')" class="rain-thumb-card" id="thumb-2026-08-27" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
-              <div style="font-size: 0.7rem; font-weight: 700; color: var(--accent-amber); margin-bottom: 0.2rem;">8/27 (暴雨)</div>
-              <img src="./rainmap/s_rainmap_2026-08-27.png" alt="8/27" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+            <div onclick="selectRainDate('2026-08-27')" class="rain-thumb-card" id="thumb-2026-08-27"
+              style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+              <div style="font-size: 0.7rem; font-weight: 700; color: var(--accent-amber); margin-bottom: 0.2rem;">8/27
+                (暴雨)</div>
+              <img src="./rainmap/s_rainmap_2026-08-27.png" alt="8/27"
+                style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
-            <div onclick="selectRainDate('2026-08-28')" class="rain-thumb-card" id="thumb-2026-08-28" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
-              <div style="font-size: 0.7rem; font-weight: 700; color: var(--accent-amber); margin-bottom: 0.2rem;">8/28 (高峰)</div>
-              <img src="./rainmap/s_rainmap_2026-08-28.png" alt="8/28" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+            <div onclick="selectRainDate('2026-08-28')" class="rain-thumb-card" id="thumb-2026-08-28"
+              style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+              <div style="font-size: 0.7rem; font-weight: 700; color: var(--accent-amber); margin-bottom: 0.2rem;">8/28
+                (高峰)</div>
+              <img src="./rainmap/s_rainmap_2026-08-28.png" alt="8/28"
+                style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
-            <div onclick="selectRainDate('2026-08-29')" class="rain-thumb-card" id="thumb-2026-08-29" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+            <div onclick="selectRainDate('2026-08-29')" class="rain-thumb-card" id="thumb-2026-08-29"
+              style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
               <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">8/29</div>
-              <img src="./rainmap/s_rainmap_2026-08-29.png" alt="8/29" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+              <img src="./rainmap/s_rainmap_2026-08-29.png" alt="8/29"
+                style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
-            <div onclick="selectRainDate('2026-08-30')" class="rain-thumb-card" id="thumb-2026-08-30" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 2px solid var(--accent-rose); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
-              <div style="font-size: 0.7rem; font-weight: 800; color: var(--accent-rose); margin-bottom: 0.2rem;">8/30 (事故日)</div>
-              <img src="./rainmap/s_rainmap_2026-08-30.png" alt="8/30" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+            <div onclick="selectRainDate('2026-08-30')" class="rain-thumb-card" id="thumb-2026-08-30"
+              style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 2px solid var(--accent-rose); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+              <div style="font-size: 0.7rem; font-weight: 800; color: var(--accent-rose); margin-bottom: 0.2rem;">8/30
+                (事故日)</div>
+              <img src="./rainmap/s_rainmap_2026-08-30.png" alt="8/30"
+                style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
-            <div onclick="selectRainDate('2026-08-31')" class="rain-thumb-card" id="thumb-2026-08-31" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+            <div onclick="selectRainDate('2026-08-31')" class="rain-thumb-card" id="thumb-2026-08-31"
+              style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
               <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">8/31</div>
-              <img src="./rainmap/s_rainmap_2026-08-31.png" alt="8/31" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+              <img src="./rainmap/s_rainmap_2026-08-31.png" alt="8/31"
+                style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
-            <div onclick="selectRainDate('2026-09-01')" class="rain-thumb-card" id="thumb-2026-09-01" style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
+            <div onclick="selectRainDate('2026-09-01')" class="rain-thumb-card" id="thumb-2026-09-01"
+              style="cursor: pointer; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 0.4rem; padding: 0.35rem; text-align: center; transition: all 0.2s;">
               <div style="font-size: 0.7rem; font-weight: 700; color: #cbd5e1; margin-bottom: 0.2rem;">9/01</div>
-              <img src="./rainmap/s_rainmap_2026-09-01.png" alt="9/01" style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
+              <img src="./rainmap/s_rainmap_2026-09-01.png" alt="9/01"
+                style="width: 100%; border-radius: 2px; aspect-ratio: 1; object-fit: cover;" loading="lazy" />
             </div>
           </div>
         </div>
@@ -914,7 +1022,9 @@
     <div class="card">
       <div class="card-header">
         <div class="card-title">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M18 9l-5 5-4-4-6 6"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 3v18h18M18 9l-5 5-4-4-6 6" />
+          </svg>
           武界壩實測日平均流量歷線 (CMS)
         </div>
       </div>
@@ -927,7 +1037,9 @@
     <div class="card">
       <div class="card-header">
         <div class="card-title">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M2 18h20M2 6h20"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 12h20M2 18h20M2 6h20" />
+          </svg>
           寶石橋 (1510H075) 即時河川水位歷線（位於此次濁水溪航段下游）
         </div>
         <div style="display:flex; gap:0.4rem;">
@@ -944,7 +1056,10 @@
     <div class="card" style="margin-top: 1.75rem;">
       <div class="card-header">
         <div class="card-title">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M3 9h18M3 15h18M9 3v18M15 3v18" />
+          </svg>
           濁水溪水文聯測數據彙整表 (上游武界壩 + 下游寶石橋)
         </div>
       </div>
@@ -1038,7 +1153,11 @@
     <div class="card" style="margin-top: 1.75rem;">
       <div class="card-header" style="flex-direction: column; align-items: flex-start; gap: 0.35rem;">
         <div class="card-title">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
           濁水溪流域水庫放流警戒官方發布紀錄 (8/24 - 9/1)
         </div>
         <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
@@ -1048,10 +1167,13 @@
 
       <div style="display: flex; flex-direction: column; gap: 0.85rem; margin-top: 0.5rem;">
         <!-- 警報 0: 8/24 武界壩與霧社水庫放水 (大水期起始) -->
-        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(251, 191, 36, 0.3); border-left: 4px solid var(--accent-amber); border-radius: 0.5rem; padding: 0.85rem 1rem;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem;">
+        <div
+          style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(251, 191, 36, 0.3); border-left: 4px solid var(--accent-amber); border-radius: 0.5rem; padding: 0.85rem 1rem;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem;">
             <div style="display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
-              <span style="background: rgba(251, 191, 36, 0.15); color: var(--accent-amber); font-size: 0.725rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(251, 191, 36, 0.3);">
+              <span
+                style="background: rgba(251, 191, 36, 0.15); color: var(--accent-amber); font-size: 0.725rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(251, 191, 36, 0.3);">
                 武界壩 & 霧社水庫 · 放水洩洪警戒
               </span>
               <strong style="color: #fff; font-size: 0.875rem;">大觀 / 萬大發電廠發布</strong>
@@ -1066,10 +1188,13 @@
           </div>
         </div>
         <!-- 警報 1: 8/27 霧社水庫 -->
-        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(251, 191, 36, 0.3); border-left: 4px solid var(--accent-amber); border-radius: 0.5rem; padding: 0.85rem 1rem;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem;">
+        <div
+          style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(251, 191, 36, 0.3); border-left: 4px solid var(--accent-amber); border-radius: 0.5rem; padding: 0.85rem 1rem;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem;">
             <div style="display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
-              <span style="background: rgba(251, 191, 36, 0.15); color: var(--accent-amber); font-size: 0.725rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(251, 191, 36, 0.3);">
+              <span
+                style="background: rgba(251, 191, 36, 0.15); color: var(--accent-amber); font-size: 0.725rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(251, 191, 36, 0.3);">
                 上游霧社水庫 · 放水警戒
               </span>
               <strong style="color: #fff; font-size: 0.875rem;">萬大發電廠發布</strong>
@@ -1085,10 +1210,13 @@
         </div>
 
         <!-- 警報 2: 8/28 霧社水庫 -->
-        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(251, 191, 36, 0.3); border-left: 4px solid var(--accent-amber); border-radius: 0.5rem; padding: 0.85rem 1rem;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem;">
+        <div
+          style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(251, 191, 36, 0.3); border-left: 4px solid var(--accent-amber); border-radius: 0.5rem; padding: 0.85rem 1rem;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem;">
             <div style="display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
-              <span style="background: rgba(251, 191, 36, 0.15); color: var(--accent-amber); font-size: 0.725rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(251, 191, 36, 0.3);">
+              <span
+                style="background: rgba(251, 191, 36, 0.15); color: var(--accent-amber); font-size: 0.725rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(251, 191, 36, 0.3);">
                 上游霧社水庫 · 放水警戒
               </span>
               <strong style="color: #fff; font-size: 0.875rem;">萬大發電廠發布</strong>
@@ -1104,10 +1232,13 @@
         </div>
 
         <!-- 警報 3: 8/29 - 8/30 事故當日 (無放水警報) -->
-        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(52, 211, 153, 0.35); border-left: 4px solid var(--accent-emerald); border-radius: 0.5rem; padding: 0.85rem 1rem;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem;">
+        <div
+          style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(52, 211, 153, 0.35); border-left: 4px solid var(--accent-emerald); border-radius: 0.5rem; padding: 0.85rem 1rem;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem;">
             <div style="display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
-              <span style="background: rgba(52, 211, 153, 0.15); color: var(--accent-emerald); font-size: 0.725rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(52, 211, 153, 0.3);">
+              <span
+                style="background: rgba(52, 211, 153, 0.15); color: var(--accent-emerald); font-size: 0.725rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(52, 211, 153, 0.3);">
                 8/30 事故當日 · 無發布放流警報
               </span>
               <strong style="color: #fff; font-size: 0.875rem;">連續高水自然回落期</strong>
@@ -1123,10 +1254,13 @@
         </div>
 
         <!-- 警報 4: 8/31 搜救應變 · 協調電廠限制放流 -->
-        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(168, 85, 247, 0.35); border-left: 4px solid var(--accent-purple); border-radius: 0.5rem; padding: 0.85rem 1rem;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem;">
+        <div
+          style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(168, 85, 247, 0.35); border-left: 4px solid var(--accent-purple); border-radius: 0.5rem; padding: 0.85rem 1rem;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem;">
             <div style="display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
-              <span style="background: rgba(168, 85, 247, 0.15); color: var(--accent-purple); font-size: 0.725rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(168, 85, 247, 0.3);">
+              <span
+                style="background: rgba(168, 85, 247, 0.15); color: var(--accent-purple); font-size: 0.725rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(168, 85, 247, 0.3);">
                 8/31 搜救應變 · 協調限制放水
               </span>
               <strong style="color: #fff; font-size: 0.875rem;">搜救指揮所協調大觀電廠</strong>
@@ -1137,15 +1271,19 @@
             消防搜救人員於執行救援遭遇急流翻覆後，搜救指揮所<strong>緊急協調武界壩及一線天壩限制放水</strong>，以壓低下游水位與流速，爭取搜救安全作業窗口。
           </p>
           <div style="font-size: 0.75rem; color: var(--accent-purple); font-weight: 600;">
-            水文對照：實測數據精確反映此調度——武界壩 8/31 出流量驟降至全期最低點 <strong>40.33 CMS</strong>（出水量僅 348.45 萬噸，較前日縮減 45%），下游寶石橋水位亦降至 345.91m。
+            水文對照：實測數據精確反映此調度——武界壩 8/31 出流量驟降至全期最低點 <strong>40.33 CMS</strong>（出水量僅 348.45 萬噸，較前日縮減 45%），下游寶石橋水位亦降至
+            345.91m。
           </div>
         </div>
 
         <!-- 警報 5: 9/01 武界壩放水警報 (對照組) -->
-        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.3); border-left: 4px solid var(--accent-blue); border-radius: 0.5rem; padding: 0.85rem 1rem;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem;">
+        <div
+          style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.3); border-left: 4px solid var(--accent-blue); border-radius: 0.5rem; padding: 0.85rem 1rem;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.35rem;">
             <div style="display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
-              <span style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); font-size: 0.725rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(56, 189, 248, 0.3);">
+              <span
+                style="background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); font-size: 0.725rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px; border: 1px solid rgba(56, 189, 248, 0.3);">
                 武界壩 · 排洪放水警戒 (對照)
               </span>
               <strong style="color: #fff; font-size: 0.875rem;">大觀發電廠發布</strong>
@@ -1163,47 +1301,73 @@
     </div>
 
     <!-- Section 4: AccTW Tool Recommendation Card -->
-    <div class="card" style="margin-top: 1.75rem; background: linear-gradient(135deg, rgba(30, 58, 138, 0.25) 0%, rgba(15, 23, 42, 0.95) 100%); border: 1px solid rgba(56, 189, 248, 0.35); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);">
+    <div class="card"
+      style="margin-top: 1.75rem; background: linear-gradient(135deg, rgba(30, 58, 138, 0.25) 0%, rgba(15, 23, 42, 0.95) 100%); border: 1px solid rgba(56, 189, 248, 0.35); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);">
       <div style="display: flex; flex-direction: column; gap: 1rem;">
-        <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <div
+          style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
           <div style="flex: 1; min-width: 280px;">
-            <div style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 9999px; margin-bottom: 0.6rem;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/></svg>
+            <div
+              style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.4); color: #38bdf8; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 9999px; margin-bottom: 0.6rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24" />
+              </svg>
               水域安全與航行風險評估工具推薦
             </div>
             <h3 style="font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 0.4rem; line-height: 1.3;">
               集水區觀察員 (accTW) — 一站式水文數據與撤退航跡分析
             </h3>
             <p style="font-size: 0.875rem; color: #94a3b8; line-height: 1.6; margin: 0;">
-              進行戶外溪谷活動與水上航行前，可運用<strong>「集水區觀察員」</strong>進行全台水文一站式查詢。整合全台水庫堤壩放流量 (CMS)、即時雨量、河川水位歷線、集水區面積換算、降雨預報，並提供現存 GPX 航跡與撤退路線參考，輔助下水前客觀評估環境風險。
+              進行戶外溪谷活動與水上航行前，可運用<strong>「集水區觀察員」</strong>進行全台水文一站式查詢。整合全台水庫堤壩放流量 (CMS)、即時雨量、河川水位歷線、集水區面積換算、降雨預報，並提供現存
+              GPX 航跡與撤退路線參考，輔助下水前客觀評估環境風險。
             </p>
           </div>
           <div style="display: flex; align-items: center; width: 100%;">
-            <a href="https://wiwari.github.io/accTW/?" target="_blank" rel="noopener noreferrer" class="promo-action-btn" style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.925rem; padding: 0.75rem 1.25rem; border-radius: 0.6rem; border: 1px solid rgba(56, 189, 248, 0.5); box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4); white-space: nowrap;">
+            <a href="https://wiwari.github.io/accTW/?" target="_blank" rel="noopener noreferrer"
+              class="promo-action-btn"
+              style="display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #fff; text-decoration: none; font-weight: 700; font-size: 0.925rem; padding: 0.75rem 1.25rem; border-radius: 0.6rem; border: 1px solid rgba(56, 189, 248, 0.5); box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4); white-space: nowrap;">
               前往集水區觀察員
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+              </svg>
             </a>
           </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 0.25rem; padding-top: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
-          <div style="background: rgba(15, 23, 42, 0.6); padding: 0.65rem 0.85rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.05);">
-            <div style="color: #38bdf8; font-weight: 700; font-size: 0.825rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.4rem;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 0.25rem; padding-top: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+          <div
+            style="background: rgba(15, 23, 42, 0.6); padding: 0.65rem 0.85rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.05);">
+            <div
+              style="color: #38bdf8; font-weight: 700; font-size: 0.825rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.4rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 20V10M12 20V4M6 20v-6" />
+              </svg>
               堤壩流量與水位
             </div>
             <div style="color: #94a3b8; font-size: 0.78rem;">全台水壩放流量 (CMS) 與下游水位歷線</div>
           </div>
-          <div style="background: rgba(15, 23, 42, 0.6); padding: 0.65rem 0.85rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.05);">
-            <div style="color: #38bdf8; font-weight: 700; font-size: 0.825rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.4rem;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25M8 19v2M8 13v2M16 19v2M16 13v2M12 21v2M12 15v2"/></svg>
+          <div
+            style="background: rgba(15, 23, 42, 0.6); padding: 0.65rem 0.85rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.05);">
+            <div
+              style="color: #38bdf8; font-weight: 700; font-size: 0.825rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.4rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25M8 19v2M8 13v2M16 19v2M16 13v2M12 21v2M12 15v2" />
+              </svg>
               雨量與集水區面積
             </div>
             <div style="color: #94a3b8; font-size: 0.78rem;">上游集水區面積換算與降雨預報分析</div>
           </div>
-          <div style="background: rgba(15, 23, 42, 0.6); padding: 0.65rem 0.85rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.05);">
-            <div style="color: #38bdf8; font-weight: 700; font-size: 0.825rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.4rem;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          <div
+            style="background: rgba(15, 23, 42, 0.6); padding: 0.65rem 0.85rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.05);">
+            <div
+              style="color: #38bdf8; font-weight: 700; font-size: 0.825rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.4rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+              </svg>
               GPX 航跡與撤退參考
             </div>
             <div style="color: #94a3b8; font-size: 0.78rem;">現存航跡、下水點與撤退路線地理資訊</div>
@@ -1213,10 +1377,14 @@
     </div>
 
     <!-- Section 5: Official OpenData & API Source Citations -->
-    <div class="card" style="margin-top: 1.75rem; border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(15, 23, 42, 0.85);">
+    <div class="card"
+      style="margin-top: 1.75rem; border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(15, 23, 42, 0.85);">
       <div class="card-header" style="flex-direction: column; align-items: flex-start; gap: 0.35rem;">
         <div class="card-title">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+          </svg>
           本站數據與影像公開資料來源 (Open Data Sources)
         </div>
         <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
@@ -1224,73 +1392,92 @@
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.85rem; margin-top: 0.5rem;">
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.85rem; margin-top: 0.5rem;">
         <!-- 來源 1: 水利署水庫水情 OpenAPI -->
-        <div style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
+        <div
+          style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
             <strong style="color: #38bdf8; font-size: 0.875rem;">經濟部水利署水庫水情 API</strong>
-            <span style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">FHY OpenAPI</span>
+            <span
+              style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">FHY
+              OpenAPI</span>
           </div>
           <p style="font-size: 0.775rem; color: #cbd5e1; line-height: 1.55; margin: 0 0 0.5rem 0;">
             提供武界壩 (測站代碼 20507) 每日進水量、出水量 (萬噸) 及日平均放流量 (CMS) 客觀實測值。
           </p>
-          <a href="https://fhy.wra.gov.tw/fhyv2/" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+          <a href="https://fhy.wra.gov.tw/fhyv2/" target="_blank" rel="noopener noreferrer"
+            style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
             水利署防災資訊網 ↗
           </a>
         </div>
 
         <!-- 來源 2: 寶石橋河川即時水位時資料 -->
-        <div style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
+        <div
+          style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
             <strong style="color: #38bdf8; font-size: 0.875rem;">河川即時水文資料庫</strong>
-            <span style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">1510H075</span>
+            <span
+              style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">1510H075</span>
           </div>
           <p style="font-size: 0.775rem; color: #cbd5e1; line-height: 1.55; margin: 0 0 0.5rem 0;">
             提供濁水溪下游寶石橋測站 8/26～9/02 連續 168 小時逐時河川水面標高歷線 (m) 與警戒高對照。
           </p>
-          <a href="https://gweb.wra.gov.tw/wdata/" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+          <a href="https://gweb.wra.gov.tw/wdata/" target="_blank" rel="noopener noreferrer"
+            style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
             水文水資源資料庫 ↗
           </a>
         </div>
 
         <!-- 來源 3: 國家災防中心 NCDR / CBS 警報 -->
-        <div style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
+        <div
+          style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
             <strong style="color: #38bdf8; font-size: 0.875rem;">NCDR 災防告警廣播 (CBS)</strong>
-            <span style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">CAP XML Feed</span>
+            <span
+              style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">CAP
+              XML Feed</span>
           </div>
           <p style="font-size: 0.775rem; color: #cbd5e1; line-height: 1.55; margin: 0 0 0.5rem 0;">
             收錄台電大觀發電廠與萬大發電廠對武界壩、霧社水庫發布之法定放流與洩洪預警通報原文。
           </p>
-          <a href="https://cbs.tw" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+          <a href="https://cbs.tw" target="_blank" rel="noopener noreferrer"
+            style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
             國家災防警報平台 (cbs.tw) ↗
           </a>
         </div>
 
         <!-- 來源 4: 孫海橋 CCTV 影像監控站 -->
-        <div style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
+        <div
+          style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
             <strong style="color: #38bdf8; font-size: 0.875rem;">水利署第四河川分署 CCTV</strong>
-            <span style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">wra-002326</span>
+            <span
+              style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">wra-002326</span>
           </div>
           <p style="font-size: 0.775rem; color: #cbd5e1; line-height: 1.55; margin: 0 0 0.5rem 0;">
             串接南投縣信義鄉孫海橋監控測站 8/25～9/01 每日 24 小時歷史影像快照與即時河況串流。
           </p>
-          <a href="https://www.twipcam.com/cam/wra-002326" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+          <a href="https://www.twipcam.com/cam/wra-002326" target="_blank" rel="noopener noreferrer"
+            style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
             twipcam 孫海橋監控頁面 ↗
           </a>
         </div>
 
         <!-- 來源 5: NCDR 歷史日累積雨量圖系統 -->
-        <div style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
+        <div
+          style="background: rgba(11, 15, 25, 0.75); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 0.6rem; padding: 0.85rem 1rem;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
             <strong style="color: #38bdf8; font-size: 0.875rem;">NCDR 歷史日雨圖系統</strong>
-            <span style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">NCDR Watch</span>
+            <span
+              style="font-size: 0.7rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 0.1rem 0.4rem; border-radius: 4px;">NCDR
+              Watch</span>
           </div>
           <p style="font-size: 0.775rem; color: #cbd5e1; line-height: 1.55; margin: 0 0 0.5rem 0;">
             提供 8/25～9/01 全台與濁水溪集水區逐日累積雨量圖 (QPF/雨量觀測網)，還原暴雨高峰至趨緩之氣象時序。
           </p>
-          <a href="https://watch.ncdr.nat.gov.tw/watch_history_rainmap" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
+          <a href="https://watch.ncdr.nat.gov.tw/watch_history_rainmap" target="_blank" rel="noopener noreferrer"
+            style="color: #38bdf8; font-size: 0.75rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 0.25rem;">
             NCDR 天氣與氣候監測網 ↗
           </a>
         </div>
@@ -1298,9 +1485,12 @@
     </div>
 
     <!-- Footer: Organization & Contact Info -->
-    <footer style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; text-align: center;">
+    <footer
+      style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; text-align: center;">
       <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
-        <a href="https://wwacatw.vercel.app" target="_blank" rel="noopener noreferrer" style="color: #fff; font-weight: 800; font-size: 0.925rem; text-decoration: none; border-bottom: 1px solid rgba(56, 189, 248, 0.4);">台灣激流實驗室 ↗</a>
+        <a href="https://twwlab.com" target="_blank" rel="noopener noreferrer"
+          style="color: #fff; font-weight: 800; font-size: 0.925rem; text-decoration: none; border-bottom: 1px solid rgba(56, 189, 248, 0.4);">台灣激流實驗室
+          ↗</a>
         <span style="color: rgba(255, 255, 255, 0.2);">|</span>
         <span style="color: #94a3b8; font-size: 0.85rem;">Taiwan Whitewater Lab</span>
       </div>
@@ -1308,8 +1498,12 @@
         本報告旨在提供客觀水文實測數據，還原流域流況事實。若對數據分析、流況對照有任何疑問或需提供實測資訊，歡迎與我們聯繫。
       </p>
       <div style="margin-top: 0.25rem;">
-        <a href="mailto:taiwanwwlab@proton.me" style="display: inline-flex; align-items: center; gap: 0.45rem; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; font-size: 0.825rem; font-weight: 700; padding: 0.45rem 1rem; border-radius: 9999px; text-decoration: none; transition: all 0.2s;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <a href="mailto:taiwanwwlab@proton.me"
+          style="display: inline-flex; align-items: center; gap: 0.45rem; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.35); color: #38bdf8; font-size: 0.825rem; font-weight: 700; padding: 0.45rem 1rem; border-radius: 9999px; text-decoration: none; transition: all 0.2s;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect width="20" height="16" x="2" y="4" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
           taiwanwwlab@proton.me
         </a>
       </div>
@@ -1322,14 +1516,14 @@
   <script>
     // 1. CCTV 8/25 - 9/01 全量歷史快照資料 (共 192 幀)
     const HISTORY_DATA = {
-      "2026-08-25": [[1787588557,1787590112],[1787592158,1787593694],[1787595758,1787597310],[1787599358,1787600900],[1787602959,1787604500],[1787606560,1787608095],[1787610161,1787611707],[1787613761,1787615334],[1787617362,1787618919],[1787620962,1787622504],[1787624563,1787626156],[1787628164,1787629706],[1787631764,1787633318],[1787635364,1787636902],[1787638965,1787640533],[1787642565,1787644112],[1787646166,1787647717],[1787649767,1787651315],[1787653367,1787654947],[1787656968,1787658576],[1787660568,1787662107],[1787664169,1787665704],[1787667770,1787669326],[1787671370,1787672904]],
-      "2026-08-26": [[1787674970,1787676518],[1787678570,1787680112],[1787682171,1787683706],[1787685771,1787687307],[1787689371,1787690914],[1787692972,1787694509],[1787696573,1787698136],[1787700173,1787701753],[1787703774,1787705360],[1787707374,1787708954],[1787710974,1787712513],[1787714575,1787716114],[1787718175,1787719727],[1787721776,1787723322],[1787725377,1787726925],[1787728978,1787730519],[1787732578,1787734134],[1787736179,1787737731],[1787739780,1787741335],[1787743381,1787744950],[1787746981,1787748539],[1787750582,1787752162],[1787754183,1787755721],[1787757783,1787759321]],
-      "2026-08-27": [[1787761384,1787762935],[1787764984,1787766539],[1787768585,1787770121],[1787772186,1787773720],[1787775787,1787777327],[1787779387,1787780921],[1787782987,1787784532],[1787786588,1787788133],[1787790189,1787791787],[1787793789,1787795381],[1787797389,1787798935],[1787800990,1787802537],[1787804591,1787806142],[1787808191,1787809739],[1787811792,1787813340],[1787815393,1787816944],[1787818993,1787820540],[1787822594,1787824171],[1787826195,1787827744],[1787829795,1787831338],[1787833395,1787834934],[1787836996,1787838530],[1787840597,1787842146],[1787844197,1787845746]],
-      "2026-08-28": [[1787847797,1787849350],[1787851398,1787852933],[1787854999,1787856534],[1787858600,1787860134],[1787862200,1787863733],[1787865801,1787867339],[1787869402,1787870941],[1787873002,1787874545],[1787876603,1787878146],[1787880204,1787881753],[1787883804,1787885343],[1787887404,1787888966],[1787891005,1787892542],[1787894605,1787896147],[1787898206,1787899784],[1787901807,1787903352],[1787905408,1787906953],[1787909009,1787910598],[1787912609,1787914157],[1787916210,1787917753],[1787919811,1787921352],[1787923411,1787924953],[1787927011,1787928546],[1787930611,1787932146]],
-      "2026-08-29": [[1787934212,1787935767],[1787937813,1787939352],[1787941413,1787942947],[1787945014,1787946548],[1787948614,1787950148],[1787952214,1787953749],[1787955815,1787957360],[1787959415,1787960950],[1787963015,1787964579],[1787966616,1787968162],[1787970216,1787971775],[1787973817,1787975404],[1787977418,1787978969],[1787981018,1787982561],[1787984619,1787986156],[1787988219,1787989787],[1787991820,1787993379],[1787995420,1787996986],[1787999021,1788000586],[1788002622,1788004165],[1788006222,1788007768],[1788009823,1788011362],[1788013424,1788014958],[1788017024,1788018572]],
-      "2026-08-30": [[1788020625,1788022182],[1788024225,1788025803],[1788027825,1788029363],[1788031425,1788032966],[1788035026,1788036559],[1788038626,1788040171],[1788042226,1788043764],[1788045827,1788047362],[1788049427,1788050970],[1788053028,1788054567],[1788056629,1788058165],[1788060229,1788061772],[1788063830,1788065375],[1788067431,1788068970],[1788071032,1788072586],[1788074632,1788076208],[1788078232,1788079800],[1788081832,1788083389],[1788085433,1788087014],[1788089034,1788090575],[1788092634,1788094193],[1788096234,1788097818],[1788099834,1788101387],[1788103435,1788104969]],
-      "2026-08-31": [[1788107036,1788108588],[1788110636,1788112170],[1788114237,1788115771],[1788117837,1788119372],[1788121438,1788122988],[1788125038,1788126571],[1788128639,1788130171],[1788132239,1788133784],[1788135840,1788137433],[1788139441,1788140992],[1788143041,1788144594],[1788146641,1788148180],[1788150241,1788151796],[1788153842,1788155382],[1788157442,1788159002],[1788161043,1788162612],[1788164644,1788166194],[1788168244,1788169778],[1788171844,1788173388],[1788175444,1788176985],[1788179045,1788180580],[1788182645,1788184185],[1788186245,1788187795],[1788189846,1788191400]],
-      "2026-09-01": [[1788193446,1788195003],[1788197047,1788198589],[1788200648,1788202183],[1788204248,1788205788],[1788207849,1788209382],[1788211449,1788212996],[1788215049,1788216592],[1788218650,1788220214],[1788222251,1788223824],[1788225852,1788227450],[1788229452,1788231037],[1788233053,1788234611],[1788236653,1788238196],[1788240253,1788241881],[1788243854,1788245410],[1788247455,1788249042],[1788251055,1788252617],[1788254655,1788256265],[1788258256,1788259946],[1788261857,1788263408],[1788265457,1788266996],[1788269057,1788270596],[1788272658,1788274192],[1788276258,1788277791]]
+      "2026-08-25": [[1787588557, 1787590112], [1787592158, 1787593694], [1787595758, 1787597310], [1787599358, 1787600900], [1787602959, 1787604500], [1787606560, 1787608095], [1787610161, 1787611707], [1787613761, 1787615334], [1787617362, 1787618919], [1787620962, 1787622504], [1787624563, 1787626156], [1787628164, 1787629706], [1787631764, 1787633318], [1787635364, 1787636902], [1787638965, 1787640533], [1787642565, 1787644112], [1787646166, 1787647717], [1787649767, 1787651315], [1787653367, 1787654947], [1787656968, 1787658576], [1787660568, 1787662107], [1787664169, 1787665704], [1787667770, 1787669326], [1787671370, 1787672904]],
+      "2026-08-26": [[1787674970, 1787676518], [1787678570, 1787680112], [1787682171, 1787683706], [1787685771, 1787687307], [1787689371, 1787690914], [1787692972, 1787694509], [1787696573, 1787698136], [1787700173, 1787701753], [1787703774, 1787705360], [1787707374, 1787708954], [1787710974, 1787712513], [1787714575, 1787716114], [1787718175, 1787719727], [1787721776, 1787723322], [1787725377, 1787726925], [1787728978, 1787730519], [1787732578, 1787734134], [1787736179, 1787737731], [1787739780, 1787741335], [1787743381, 1787744950], [1787746981, 1787748539], [1787750582, 1787752162], [1787754183, 1787755721], [1787757783, 1787759321]],
+      "2026-08-27": [[1787761384, 1787762935], [1787764984, 1787766539], [1787768585, 1787770121], [1787772186, 1787773720], [1787775787, 1787777327], [1787779387, 1787780921], [1787782987, 1787784532], [1787786588, 1787788133], [1787790189, 1787791787], [1787793789, 1787795381], [1787797389, 1787798935], [1787800990, 1787802537], [1787804591, 1787806142], [1787808191, 1787809739], [1787811792, 1787813340], [1787815393, 1787816944], [1787818993, 1787820540], [1787822594, 1787824171], [1787826195, 1787827744], [1787829795, 1787831338], [1787833395, 1787834934], [1787836996, 1787838530], [1787840597, 1787842146], [1787844197, 1787845746]],
+      "2026-08-28": [[1787847797, 1787849350], [1787851398, 1787852933], [1787854999, 1787856534], [1787858600, 1787860134], [1787862200, 1787863733], [1787865801, 1787867339], [1787869402, 1787870941], [1787873002, 1787874545], [1787876603, 1787878146], [1787880204, 1787881753], [1787883804, 1787885343], [1787887404, 1787888966], [1787891005, 1787892542], [1787894605, 1787896147], [1787898206, 1787899784], [1787901807, 1787903352], [1787905408, 1787906953], [1787909009, 1787910598], [1787912609, 1787914157], [1787916210, 1787917753], [1787919811, 1787921352], [1787923411, 1787924953], [1787927011, 1787928546], [1787930611, 1787932146]],
+      "2026-08-29": [[1787934212, 1787935767], [1787937813, 1787939352], [1787941413, 1787942947], [1787945014, 1787946548], [1787948614, 1787950148], [1787952214, 1787953749], [1787955815, 1787957360], [1787959415, 1787960950], [1787963015, 1787964579], [1787966616, 1787968162], [1787970216, 1787971775], [1787973817, 1787975404], [1787977418, 1787978969], [1787981018, 1787982561], [1787984619, 1787986156], [1787988219, 1787989787], [1787991820, 1787993379], [1787995420, 1787996986], [1787999021, 1788000586], [1788002622, 1788004165], [1788006222, 1788007768], [1788009823, 1788011362], [1788013424, 1788014958], [1788017024, 1788018572]],
+      "2026-08-30": [[1788020625, 1788022182], [1788024225, 1788025803], [1788027825, 1788029363], [1788031425, 1788032966], [1788035026, 1788036559], [1788038626, 1788040171], [1788042226, 1788043764], [1788045827, 1788047362], [1788049427, 1788050970], [1788053028, 1788054567], [1788056629, 1788058165], [1788060229, 1788061772], [1788063830, 1788065375], [1788067431, 1788068970], [1788071032, 1788072586], [1788074632, 1788076208], [1788078232, 1788079800], [1788081832, 1788083389], [1788085433, 1788087014], [1788089034, 1788090575], [1788092634, 1788094193], [1788096234, 1788097818], [1788099834, 1788101387], [1788103435, 1788104969]],
+      "2026-08-31": [[1788107036, 1788108588], [1788110636, 1788112170], [1788114237, 1788115771], [1788117837, 1788119372], [1788121438, 1788122988], [1788125038, 1788126571], [1788128639, 1788130171], [1788132239, 1788133784], [1788135840, 1788137433], [1788139441, 1788140992], [1788143041, 1788144594], [1788146641, 1788148180], [1788150241, 1788151796], [1788153842, 1788155382], [1788157442, 1788159002], [1788161043, 1788162612], [1788164644, 1788166194], [1788168244, 1788169778], [1788171844, 1788173388], [1788175444, 1788176985], [1788179045, 1788180580], [1788182645, 1788184185], [1788186245, 1788187795], [1788189846, 1788191400]],
+      "2026-09-01": [[1788193446, 1788195003], [1788197047, 1788198589], [1788200648, 1788202183], [1788204248, 1788205788], [1788207849, 1788209382], [1788211449, 1788212996], [1788215049, 1788216592], [1788218650, 1788220214], [1788222251, 1788223824], [1788225852, 1788227450], [1788229452, 1788231037], [1788233053, 1788234611], [1788236653, 1788238196], [1788240253, 1788241881], [1788243854, 1788245410], [1788247455, 1788249042], [1788251055, 1788252617], [1788254655, 1788256265], [1788258256, 1788259946], [1788261857, 1788263408], [1788265457, 1788266996], [1788269057, 1788270596], [1788272658, 1788274192], [1788276258, 1788277791]]
     };
 
     let currentDate = "2026-08-31";
@@ -1345,7 +1539,7 @@
     function formatTime(realTs) {
       const d = new Date(parseInt(realTs) * 1000);
       const pad = (n) => n.toString().padStart(2, '0');
-      return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+      return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
     }
 
     function selectDate(dateStr, btn) {
@@ -1362,7 +1556,7 @@
       currentDate = dateStr;
       currentPairs = HISTORY_DATA[dateStr] || [];
       sliderEl.max = Math.max(0, currentPairs.length - 1);
-      
+
       // 預設切換至 08:00 (通常為第 8 幀)
       let targetIdx = 8;
       if (targetIdx >= currentPairs.length) targetIdx = currentPairs.length - 1;
@@ -1376,7 +1570,7 @@
       const [fileTs, realTs] = currentPairs[idx];
       const timeStr = formatTime(realTs);
       const hourMin = timeStr.split(' ')[1] || '08:00';
-      
+
       imgEl.src = `https://c02.twipcam.com/cam/history.php?id=wra-002326&timestamp=${fileTs}`;
       labelEl.textContent = `孫海橋 歷史快照: ${timeStr}`;
       sliderTimeLabel.textContent = hourMin;
@@ -1462,7 +1656,7 @@
             const textWidth = ctx.measureText(text).width;
             const boxWidth = textWidth + 14;
             const boxHeight = 22;
-            
+
             // 防溢出自適應座標 (確保完全留在畫布內)
             let boxX = px - boxWidth / 2;
             if (boxX + boxWidth > width - 6) boxX = width - boxWidth - 6;
@@ -1513,23 +1707,23 @@
           legend: { display: false }
         },
         scales: {
-          x: { 
-            grid: { 
-              color: function(ctx) {
+          x: {
+            grid: {
+              color: function (ctx) {
                 return ctx.index === 5 ? 'rgba(244, 63, 94, 0.4)' : 'rgba(255, 255, 255, 0.05)';
               }
-            }, 
-            ticks: { 
-              color: function(ctx) {
+            },
+            ticks: {
+              color: function (ctx) {
                 return ctx.index === 5 ? '#f43f5e' : '#9ca3af';
               },
-              font: function(ctx) {
+              font: function (ctx) {
                 return ctx.index === 5 ? { weight: 'bold', size: 11 } : { size: 11 };
               },
-              callback: function(val, idx) {
+              callback: function (val, idx) {
                 return dates[idx];
               }
-            } 
+            }
           },
           y: {
             min: 20,
@@ -1550,14 +1744,14 @@
 
     // 精確建構 8/26 00:00 ~ 9/02 00:00 逐時曲線
     const dayBlueprints = [
-      { date: '8/26', base: 346.14, shape: [0,-0.08,-0.16,-0.21,-0.20,-0.16,-0.18,-0.19,-0.19,-0.14,-0.12,-0.11,-0.08,-0.04,0.06,0.08,0.12,0.22,0.18,0.14,0.07,0.05,0.02,-0.04], rain: [0,0,0,0,0,0,0,0,0,1.5,3.0,2.5,1.0,0.5,0,0,0,2.0,1.0,0,0,0,0,0] },
-      { date: '8/27', base: 346.00, shape: [-0.04,-0.06,-0.05,-0.07,-0.06,-0.04,-0.02,0.05,0.08,0.12,0.15,0.15,0.14,0.11,0.08,0.04,-0.02,-0.05,-0.08,-0.06,0.04,0.14,0.20,0.22], rain: [0,0,0,0,0,0,0,0,2.0,4.5,6.0,3.5,1.0,0,0,0,0,0,0,0,1.5,3.0,5.0,2.0] },
-      { date: '8/28', base: 346.15, shape: [0.19,0.12,0.09,0.10,0.08,-0.02,-0.14,-0.25,-0.22,-0.18,-0.12,-0.14,-0.16,-0.12,-0.08,-0.09,-0.09,-0.10,-0.09,-0.08,-0.07,-0.08,-0.08,-0.05], rain: [1.0,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
-      { date: '8/29', base: 346.10, shape: [0.37,0.32,0.26,-0.40,-0.15,-0.29,-0.21,-0.19,-0.18,-0.12,-0.08,-0.06,-0.04,-0.03,-0.01,0.00,0.02,0.04,0.06,0.07,0.07,0.06,0.02,0.03], rain: [12.0,8.5,4.0,1.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
+      { date: '8/26', base: 346.14, shape: [0, -0.08, -0.16, -0.21, -0.20, -0.16, -0.18, -0.19, -0.19, -0.14, -0.12, -0.11, -0.08, -0.04, 0.06, 0.08, 0.12, 0.22, 0.18, 0.14, 0.07, 0.05, 0.02, -0.04], rain: [0, 0, 0, 0, 0, 0, 0, 0, 0, 1.5, 3.0, 2.5, 1.0, 0.5, 0, 0, 0, 2.0, 1.0, 0, 0, 0, 0, 0] },
+      { date: '8/27', base: 346.00, shape: [-0.04, -0.06, -0.05, -0.07, -0.06, -0.04, -0.02, 0.05, 0.08, 0.12, 0.15, 0.15, 0.14, 0.11, 0.08, 0.04, -0.02, -0.05, -0.08, -0.06, 0.04, 0.14, 0.20, 0.22], rain: [0, 0, 0, 0, 0, 0, 0, 0, 2.0, 4.5, 6.0, 3.5, 1.0, 0, 0, 0, 0, 0, 0, 0, 1.5, 3.0, 5.0, 2.0] },
+      { date: '8/28', base: 346.15, shape: [0.19, 0.12, 0.09, 0.10, 0.08, -0.02, -0.14, -0.25, -0.22, -0.18, -0.12, -0.14, -0.16, -0.12, -0.08, -0.09, -0.09, -0.10, -0.09, -0.08, -0.07, -0.08, -0.08, -0.05], rain: [1.0, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+      { date: '8/29', base: 346.10, shape: [0.37, 0.32, 0.26, -0.40, -0.15, -0.29, -0.21, -0.19, -0.18, -0.12, -0.08, -0.06, -0.04, -0.03, -0.01, 0.00, 0.02, 0.04, 0.06, 0.07, 0.07, 0.06, 0.02, 0.03], rain: [12.0, 8.5, 4.0, 1.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
       // 8/30 事故當日 (平穩回落)
-      { date: '8/30', base: 346.05, shape: [0.03,0.04,0.04,0.04,0.02,0.03,0.01,0.01,0.01,-0.01,-0.02,-0.03,-0.04,-0.06,-0.08,-0.08,-0.09,-0.10,-0.09,-0.07,-0.08,-0.09,-0.08,-0.06], rain: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
-      { date: '8/31', base: 345.92, shape: [0.02,0.03,0.01,-0.04,-0.08,-0.09,-0.08,-0.03,-0.01,-0.01,-0.01,-0.01,0.01,0.01,0.00,0.02,0.04,0.03,0.03,0.03,0.02,-0.04,-0.05,-0.06], rain: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] },
-      { date: '9/1',  base: 345.85, shape: [-0.01,-0.03,-0.02,-0.04,-0.07,-0.07,-0.08,-0.07,-0.03,-0.04,-0.06,-0.08,-0.11,-0.13,-0.13,-0.12,-0.11,-0.11,-0.09,-0.07,0.13,0.18,0.22,0.24], rain: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2.5,4.0,6.5,3.0] }
+      { date: '8/30', base: 346.05, shape: [0.03, 0.04, 0.04, 0.04, 0.02, 0.03, 0.01, 0.01, 0.01, -0.01, -0.02, -0.03, -0.04, -0.06, -0.08, -0.08, -0.09, -0.10, -0.09, -0.07, -0.08, -0.09, -0.08, -0.06], rain: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+      { date: '8/31', base: 345.92, shape: [0.02, 0.03, 0.01, -0.04, -0.08, -0.09, -0.08, -0.03, -0.01, -0.01, -0.01, -0.01, 0.01, 0.01, 0.00, 0.02, 0.04, 0.03, 0.03, 0.03, 0.02, -0.04, -0.05, -0.06], rain: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] },
+      { date: '9/1', base: 345.85, shape: [-0.01, -0.03, -0.02, -0.04, -0.07, -0.07, -0.08, -0.07, -0.03, -0.04, -0.06, -0.08, -0.11, -0.13, -0.13, -0.12, -0.11, -0.11, -0.09, -0.07, 0.13, 0.18, 0.22, 0.24], rain: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.5, 4.0, 6.5, 3.0] }
     ];
 
     dayBlueprints.forEach(d => {
@@ -1584,7 +1778,7 @@
       const waterData = isHourly ? hourlyWater : dailyWater;
 
       // 8/30 點位半徑控制
-      const pointRadii = isHourly 
+      const pointRadii = isHourly
         ? waterData.map((_, i) => (i >= 96 && i < 120) ? 2.5 : 0) // 8/30 區間微點
         : [4, 4, 4, 4, 4, 7, 4, 4];
 
@@ -1617,7 +1811,7 @@
             afterDatasetsDraw(chart) {
               const { ctx, width, scales: { x } } = chart;
               const meta = chart.getDatasetMeta(0);
-              
+
               // 找出 8/30 錨點位置 (時資料取 index 104 (08:00)，日資料取 index 5)
               const targetIdx = isHourly ? 104 : 5;
               const point = meta.data[targetIdx];
@@ -1687,7 +1881,7 @@
             },
             tooltip: {
               callbacks: {
-                label: function(c) {
+                label: function (c) {
                   return ` 即時河川水位: ${c.raw.toFixed(2)} m`;
                 }
               }
@@ -1696,7 +1890,7 @@
           scales: {
             x: {
               grid: {
-                color: function(context) {
+                color: function (context) {
                   if (!isHourly) return 'rgba(255, 255, 255, 0.05)';
                   const idx = context.index;
                   if (idx === 96 || idx === 120) return 'rgba(244, 63, 94, 0.4)';
@@ -1705,7 +1899,7 @@
                 }
               },
               ticks: {
-                color: function(context) {
+                color: function (context) {
                   if (!isHourly) return context.index === 5 ? '#f43f5e' : '#9ca3af';
                   const idx = context.index;
                   if (idx === 96) return '#f43f5e';
@@ -1714,7 +1908,7 @@
                 font: { size: 11, weight: '600' },
                 maxRotation: 0,
                 autoSkip: false,
-                callback: function(val, idx) {
+                callback: function (val, idx) {
                   if (!isHourly) return dates[idx];
                   const dayNames = ['8/26', '8/27', '8/28', '8/29', '8/30', '8/31', '9/01', '9/02'];
                   if (idx % 24 === 0) {
@@ -1731,10 +1925,10 @@
               min: 345.5,
               max: 347.0,
               grid: { color: 'rgba(255, 255, 255, 0.05)' },
-              ticks: { 
+              ticks: {
                 color: '#9ca3af',
                 stepSize: 0.25,
-                callback: function(value) { return value.toFixed(2) + 'm'; }
+                callback: function (value) { return value.toFixed(2) + 'm'; }
               },
               title: { display: true, text: '水位 (m)', color: '#9ca3af', font: { size: 11 } }
             }
@@ -1834,4 +2028,5 @@
     }
   </script>
 </body>
+
 </html>
